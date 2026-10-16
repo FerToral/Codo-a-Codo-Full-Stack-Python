@@ -1,58 +1,25 @@
-
-n1= float(input("Ingresar Primer Numero: "))
-n2= float(input("Ingresar Segundo Numero: "))
-n3= float(input("Ingresar Tercer Numero: "))
-c=0
-
-def MediaAritmetica(Nota1, Nota2, Nota3):
-	if Nota1<=0 or Nota2<=0 or Nota3<=0:
-		return "Error"
-	elif Nota1>10 or Nota2>10 or Nota3>10:
-		return "Error"
-	else:
-		media= (Nota1+ Nota2+ Nota3)/3
-		return media
-
-print(MediaAritmetica(n1,n2,n3))
+"""Media de tres notas; conserva el dominio (0, 10] del ejercicio guardado."""
 
 
-
-posicion= ["Imgresar Primer Numero: ", "Ingresar Segundo Numero: ", "Ingresar Tercer Numero: "]
-n= [n1, n2, n3]
-c=0
-
-for i in range(3):
-	n[i]=float(input(posicion[i]))
-	c+=1
-
-def MediaAritmetica(Nota1, Nota2, Nota3):
-	if Nota1<=0 or Nota2<=0 or Nota3<=0:
-		return "Error"
-	elif Nota1>10 or Nota2>10 or Nota3>10:
-		return "Error"
-	else:
-		media= (Nota1+ Nota2+ Nota3)/c
-		return media
-
-print(MediaAritmetica(n[0],n[1],n[2]))
+def media_aritmetica(primera: float, segunda: float, tercera: float) -> float:
+    notas = (primera, segunda, tercera)
+    if not all(0 < nota <= 10 for nota in notas):
+        raise ValueError("Las tres notas deben ser mayores que 0 y no superar 10.")
+    return sum(notas) / len(notas)
 
 
-posicion= ["Primer", "Segundo", "Tercer"]
-n= [n1, n2, n3]
-c=0
+def main() -> int:
+    try:
+        primera = float(input("Ingresar primera nota: "))
+        segunda = float(input("Ingresar segunda nota: "))
+        tercera = float(input("Ingresar tercera nota: "))
+        resultado = media_aritmetica(primera, segunda, tercera)
+    except ValueError as error:
+        print(f"Entrada inválida: {error}")
+        return 1
+    print("Media aritmética:", resultado)
+    return 0
 
-for i in range(3):
-	n[i]=float(input("Ingresar "+posicion[i]+" Numero: "))
-	c+=1
 
-def MediaAritmetica(Nota1, Nota2, Nota3):
-	if Nota1<=0 or Nota2<=0 or Nota3<=0:
-		return "Error"
-	elif Nota1>10 or Nota2>10 or Nota3>10:
-		return "Error"
-	else:
-		media= (Nota1+ Nota2+ Nota3)/c
-		return media
-
-print(MediaAritmetica(n[0],n[1],n[2]))
-
+if __name__ == "__main__":
+    raise SystemExit(main())

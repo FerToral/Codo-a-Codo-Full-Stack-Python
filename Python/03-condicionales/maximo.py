@@ -1,21 +1,24 @@
+"""Mayor de dos notas en el intervalo [0, 10]."""
 
-primer_numero= int(input("Ingresar primer numero: "))
-segundo_numero= int(input("Ingresar segundo numero: "))
 
-def DevuelveMax(nota1, nota2):
-	if nota1<nota2:
-		mayor=nota2
-	elif nota1>nota2:
-		mayor=nota1
-	else:
-		mayor=nota1
-	return mayor
+def devolver_maximo(nota_1: int, nota_2: int) -> int:
+    """Valida ambas notas, aunque la nota inválida sea la menor."""
+    if not (0 <= nota_1 <= 10 and 0 <= nota_2 <= 10):
+        raise ValueError("Las dos notas deben estar entre 0 y 10.")
+    return max(nota_1, nota_2)
 
-if DevuelveMax(primer_numero,segundo_numero)>10:
-	print("Error al insertar alguno de las notas")
-elif DevuelveMax(primer_numero,segundo_numero)<0:
-	print("Error al insertar alguno de las notas")
-else:
-	print("El valor maximo es: ",DevuelveMax(primer_numero,segundo_numero))
 
-	
+def main() -> int:
+    try:
+        primera = int(input("Ingresar primera nota: "))
+        segunda = int(input("Ingresar segunda nota: "))
+        resultado = devolver_maximo(primera, segunda)
+    except ValueError as error:
+        print(f"Entrada inválida: {error}")
+        return 1
+    print("El valor máximo es:", resultado)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

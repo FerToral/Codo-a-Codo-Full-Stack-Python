@@ -1,36 +1,37 @@
-def suma(num1, num2):
-	return num1+num2
+"""Calculadora de cuatro operaciones con control de errores de entrada."""
 
-def resta(num1, num2):
-	return num1-num2
-
-def multiplica(num1, num2):
-	return num1*num2
-
-def divide(num1,num2):		
-	return num1/num2
-	
-
-op1=(int(input("Introduce el primer número: ")))
-
-op2=(int(input("Introduce el segundo número: ")))		
-	
-operacion=input("Introduce la operación a realizar (suma,resta,multiplica,divide): ")
-
-if operacion=="suma":
-	print(suma(op1,op2))
-
-elif operacion=="resta":
-	print(resta(op1,op2))
-
-elif operacion=="multiplica":
-	print(multiplica(op1,op2))
-
-elif operacion=="divide":
-	print(divide(op1,op2))
-
-else:
-	print ("Operación no contemplada")
+import math
 
 
-print("Operación ejecutada. Continuación de ejecúción del programa ")
+def calcular(primero: float, segundo: float, operacion: str) -> float:
+    if not (math.isfinite(primero) and math.isfinite(segundo)):
+        raise ValueError("Los operandos deben ser números finitos.")
+    operacion = operacion.strip().lower()
+    if operacion == "suma":
+        return primero + segundo
+    if operacion == "resta":
+        return primero - segundo
+    if operacion == "multiplica":
+        return primero * segundo
+    if operacion == "divide":
+        if segundo == 0:
+            raise ValueError("No se puede dividir por cero.")
+        return primero / segundo
+    raise ValueError("Operación no contemplada.")
+
+
+def main() -> int:
+    try:
+        primero = float(input("Introduce el primer número: "))
+        segundo = float(input("Introduce el segundo número: "))
+        operacion = input("Operación (suma, resta, multiplica, divide): ")
+        resultado = calcular(primero, segundo, operacion)
+    except ValueError as error:
+        print(f"Entrada inválida: {error}")
+        return 1
+    print("Resultado:", resultado)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
