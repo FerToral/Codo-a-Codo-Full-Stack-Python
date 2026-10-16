@@ -1,11 +1,8 @@
 """Calculadora de cuatro operaciones con control de errores de entrada."""
 
-import math
-
-
-def calcular(primero: float, segundo: float, operacion: str) -> float:
-    if not (math.isfinite(primero) and math.isfinite(segundo)):
-        raise ValueError("Los operandos deben ser números finitos.")
+def calcular(primero: int, segundo: int, operacion: str) -> int | float:
+    if not (isinstance(primero, int) and isinstance(segundo, int)):
+        raise ValueError("Los operandos deben ser números enteros.")
     operacion = operacion.strip().lower()
     if operacion == "suma":
         return primero + segundo
@@ -22,8 +19,8 @@ def calcular(primero: float, segundo: float, operacion: str) -> float:
 
 def main() -> int:
     try:
-        primero = float(input("Introduce el primer número: "))
-        segundo = float(input("Introduce el segundo número: "))
+        primero = int(input("Introduce el primer número: "))
+        segundo = int(input("Introduce el segundo número: "))
         operacion = input("Operación (suma, resta, multiplica, divide): ")
         resultado = calcular(primero, segundo, operacion)
     except ValueError as error:

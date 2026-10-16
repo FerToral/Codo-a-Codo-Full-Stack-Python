@@ -42,6 +42,13 @@ class CondicionalesYExcepciones(unittest.TestCase):
             with self.subTest(operandos=operandos), self.assertRaises(ValueError):
                 calcular(*operandos)
 
+    def test_calculadora_conserva_precision_entera(self):
+        calcular = cargar("03-condicionales/calculadora.py")["calcular"]
+        for entero in (9007199254740993, 10 ** 400):
+            with self.subTest(entero=entero):
+                self.assertEqual(calcular(entero, 0, "suma"), entero)
+                self.assertEqual(calcular(entero, 2, "multiplica"), entero * 2)
+
     def test_media_sin_estado_global(self):
         media = cargar("03-condicionales/media_aritmetica.py")["media_aritmetica"]
         self.assertEqual(media(3, 6, 9), 6)
@@ -87,7 +94,7 @@ class EjecucionDeConsola(unittest.TestCase):
             "02-colecciones/listas.py": ("", "Martes"),
             "02-colecciones/tuplas.py": ("", "Ana"),
             "03-condicionales/asignaturas.py": ("PRUEBA DE SOFTWARE\n", "Asignatura elegida"),
-            "03-condicionales/calculadora.py": ("3\n2\nsuma\n", "Resultado: 5.0"),
+            "03-condicionales/calculadora.py": ("3\n2\nsuma\n", "Resultado: 5"),
             "03-condicionales/edad_y_notas.py": ("20\n8\n", "Notable"),
             "03-condicionales/evaluacion.py": ("7\n", "Aprobado"),
             "03-condicionales/maximo.py": ("3\n7\n", "máximo es: 7"),
@@ -105,10 +112,16 @@ class EjecucionDeConsola(unittest.TestCase):
                 self.assertEqual(proceso.returncode, 0, proceso.stderr)
                 self.assertIn(esperado, proceso.stdout)
 
+    def test_calculadora_conserva_precision_en_consola(self):
+        proceso = self.ejecutar("03-condicionales/calculadora.py", "9007199254740993\n0\nsuma\n")
+        self.assertEqual(proceso.returncode, 0, proceso.stderr)
+        self.assertIn("Resultado: 9007199254740993", proceso.stdout)
+
     def test_entrada_invalida_sin_traceback(self):
         casos = (
             ("03-condicionales/maximo.py", "-1\n7\n"),
             ("03-condicionales/calculadora.py", "3\n0\ndivide\n"),
+            ("03-condicionales/calculadora.py", "3.5\n"),
             ("03-condicionales/media_aritmetica.py", "tres\n"),
             ("05-excepciones/raiz_cuadrada.py", "texto\n"),
             ("05-excepciones/raiz_cuadrada.py", "-1\n"),

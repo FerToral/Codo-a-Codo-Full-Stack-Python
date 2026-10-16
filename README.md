@@ -35,4 +35,6 @@ Los scripts pertenecen a Codo a Codo según la identificación de su autor. Sus 
 
 ## Comportamientos revisados
 
+La calculadora usa operandos enteros como en el ejercicio original y conserva su precisión en suma, resta y multiplicación. La división utiliza el resultado de la división real de Python.
+
 El máximo verifica ambas notas en `[0, 10]`, la calculadora informa la división por cero y las operaciones desconocidas, la media consulta tres valores una sola vez y la raíz también captura errores al convertir el texto ingresado. La media conserva el intervalo `(0, 10]` del código guardado, porque no se recuperó su consigna específica. Las [pruebas](pruebas/test_python.py) incluyen regresiones de estos casos y una ejecución de los quince scripts.
