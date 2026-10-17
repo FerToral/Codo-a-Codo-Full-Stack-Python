@@ -42,3 +42,7 @@ Los originales completos, con los comentarios de los ejemplos sustituidos en cua
 ## Validación y límites
 
 Las pruebas verifican los errores concretos corregidos y ejecutan los quince archivos con entradas de ejemplo. No equivalen a una corrección oficial de los enunciados. Los scripts conservados pueden esperar entradas de un tipo concreto, como en su uso original de clase. En particular, `buscar_arroba.py` solo comprueba si aparece `@`, y `edad_y_notas.py` conserva las reglas históricas del ejemplo.
+
+## Ampliación POO — 2026
+
+La actividad opcional **POO Banco** se identifica por la consigna del material compartido de Codo a Codo Full Stack Python (carpeta Python del curso). La implementación en `Python/06-poo/Banco` es una propuesta nueva de estudio asistida en 2026, no una entrega histórica recuperada ni el proyecto final del curso. Los ejemplos docentes `banco.py` y `cliente.py` originales permanecen en el respaldo privado; no se publican como respuestas personales. La edición exacta de la comisión continúa sin acreditarse.
