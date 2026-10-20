@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>
+            {% block title %}
+                Proyecto web{% endblock %}
+        · Codo a Codo</title>
+        <link rel="stylesheet"
+              href="{% static 'aula.css' %}">
+    </head>
+    <body>
+        <a class="salto" href="#contenido">Saltar al contenido</a>
+        <header>
+            <nav aria-label="Principal">
+                <a class="marca"
+                   href="{% url 'inicio' %}">Taller web<span>Python + Django</span>
+                </a>
+                <div>
+                    <a href="{% url 'servicios' %}">Servicios</a>
+                    <a href="{% url 'blog' %}">Blog</a>
+                    <a href="{% url 'pedidos' %}">Gestión</a>
+                    <a href="{% url 'plantilla' %}">Fundamentos</a>
+                </div>
+            </nav>
+        </header>
+        <main id="contenido">
+            {% for message in messages %}
+                <p role="status" class="aviso">{{ message }}</p>{% endfor %}
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>Codo a Codo · Proyecto de práctica Django</p>
+            <a href="{% url 'admin:index' %}">Administración</a>
+        </footer>
+    </body>
+</html>

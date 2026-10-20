@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contacto · La cocina de Juan</title>
+    <link rel="stylesheet" href="../../../recursos/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../recursos/cocina.css" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header id="cabecera"></header>
+    <main id="contenido">
+      <p class="etiqueta">Formulario de práctica</p>
+      <h1>Una receta empieza con una idea.</h1>
+      <p>
+        No se envían ni guardan datos: esta actividad valida el formulario en el
+        navegador.
+      </p>
+      <form class="formulario" id="contacto">
+        <label
+          >Nombre<input
+            name="nombre"
+            required
+            maxlength="80"
+            autocomplete="given-name" /></label
+        ><label
+          >Correo<input
+            name="correo"
+            type="email"
+            required
+            autocomplete="email" /></label
+        ><label
+          >Mensaje<textarea
+            name="mensaje"
+            required
+            minlength="10"
+            maxlength="1000"
+          ></textarea></label
+        ><button class="btn-cocina" type="submit">Validar mensaje</button>
+        <p role="status" id="estado"></p>
+      </form>
+    </main>
+    <footer id="pie"></footer>
+    <script src="../../../recursos/vendor/jquery.min.js"></script>
+    <script src="../../../recursos/vendor/bootstrap.bundle.min.js"></script>
+    <script type="module" src="layout.js"></script>
+    <script type="module">
+      document.querySelector("#contacto").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.querySelector("#estado").textContent =
+          "Mensaje válido. Ejemplo local: no se realizó ningún envío.";
+      });
+    </script>
+  </body>
+</html>

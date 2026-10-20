@@ -1,0 +1,11 @@
+{
+  "name": "codo-a-codo-full-stack",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:web": "node --test JavaScript/pruebas/*.test.mjs Web/Trabajos-Practicos/Astronomia/pruebas/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

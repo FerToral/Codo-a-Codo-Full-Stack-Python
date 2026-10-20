@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JavaScript · CaC Full Stack</title>
+    <style>
+      :root {
+        font: 17px/1.6 system-ui;
+        color: #203a35;
+        background: #faf8f1;
+      }
+      main {
+        max-width: 56rem;
+        margin: 3rem auto;
+        padding: 0 1.2rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 7vw, 3.2rem);
+      }
+      label {
+        display: block;
+        font-weight: 650;
+        margin: 1rem 0 0.4rem;
+      }
+      select,
+      textarea,
+      button {
+        font: inherit;
+        padding: 0.7rem;
+      }
+      select,
+      textarea {
+        width: 100%;
+        max-width: 42rem;
+      }
+      textarea {
+        display: block;
+        font-family: monospace;
+      }
+      button {
+        background: #21665a;
+        color: white;
+        border: 0;
+        margin: 1rem 0;
+      }
+      pre {
+        background: #e8eee7;
+        padding: 1.2rem;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        min-height: 4rem;
+      }
+      a {
+        color: #17675c;
+      }
+      :focus-visible {
+        outline: 3px solid #b45a25;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Codo a Codo · Full Stack</p>
+      <h1>JavaScript, de la expresión al DOM.</h1>
+      <p>
+        Guía de clase 14. Elegí un ejercicio, cambiá sus datos y ejecutalo sin
+        salir de esta página.
+      </p>
+      <label for="actividad">Ejercicio</label
+      ><select id="actividad"></select
+      ><label for="datos">Datos en formato JSON</label
+      ><textarea id="datos" rows="3"></textarea>
+      <button id="ejecutar" type="button">Ejecutar</button>
+      <pre id="salida" role="status" aria-live="polite">
+La salida aparece aquí.</pre
+      >
+      <nav>
+        <a href="01-fundamentos/dialogos.html">Diálogos y document.write</a> ·
+        <a href="04-dom-y-eventos/index.html">DOM y eventos</a> ·
+        <a href="README.md">Guías y ejemplos de funciones/arrays</a>
+      </nav>
+      <script type="module">
+        import { actividades, resolver } from "./01-fundamentos/ejercicios.js";
+        const actividad = document.querySelector("#actividad"),
+          datos = document.querySelector("#datos"),
+          salida = document.querySelector("#salida");
+        actividades.forEach(([nombre], indice) => {
+          const op = document.createElement("option");
+          op.value = indice + 1;
+          op.textContent = indice + 1 + ". " + nombre;
+          actividad.append(op);
+        });
+        function cargar() {
+          datos.value = JSON.stringify(
+            actividades[Number(actividad.value) - 1][1],
+          );
+        }
+        actividad.addEventListener("change", cargar);
+        cargar();
+        document.querySelector("#ejecutar").addEventListener("click", () => {
+          try {
+            const entrada = JSON.parse(datos.value);
+            if (!Array.isArray(entrada))
+              throw Error("Los datos deben ser un array");
+            const resultado = resolver(Number(actividad.value), entrada);
+            salida.textContent =
+              typeof resultado === "string"
+                ? resultado
+                : JSON.stringify(resultado, null, 2);
+          } catch (error) {
+            salida.textContent = "Revisá los datos: " + error.message;
+          }
+        });
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+    Eliminar registro{% endblock %}
+{% block content %}
+    <h1>Confirmar eliminación.</h1>
+    <p>Se eliminará <strong>{{ objeto }}</strong>. Esta acción no se puede deshacer.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="linea">
+            <button>Eliminar registro</button>
+            <a href="{% url 'pedidos' %}">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}

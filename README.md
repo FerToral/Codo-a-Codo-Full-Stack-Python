@@ -1,58 +1,71 @@
-# Codo a Codo — Full Stack Python
+# Codo a Codo · Full Stack Python
 
-Prácticas de la formación Full Stack de Codo a Codo: fundamentos de Python,
-guías de ejercicios y una entrega web de astronomía con HTML/CSS.
+Prácticas y proyectos de la formación Full Stack de Codo a Codo: desde páginas con HTML y CSS hasta aplicaciones con JavaScript, Vue, bases de datos y Django.
 
-## Prácticas web
+## Recorrido
 
-- [Astronomía](Web/Trabajos-Practicos/Astronomia/): seis páginas, listas,
-  tablas y formulario local. Se conserva la identidad histórica TP N.º 2;
-  no se afirma que sea el final Django ni que equivalga al integrador TP06.
-- [Letra del DNI](Web/Practicas/Letra-DNI/): versión de navegador de U1/22.
-  El cálculo corresponde al documento español, no al DNI argentino.
+| Área                                                   | Prácticas                                                                   |
+| ------------------------------------------------------ | --------------------------------------------------------------------------- |
+| [HTML y CSS](Web/Trabajos-Practicos/Astronomia/)       | Órbita: seis páginas, navegación, tablas y formulario                       |
+| [Bootstrap, DOM y Vue](Web/Trabajos-Practicos/Cocina/) | La cocina de Juan: diseño adaptable, catálogo, datos reactivos y SPA        |
+| [JavaScript](JavaScript/)                              | Fundamentos, funciones, arrays, cadenas, eventos y almacenamiento local     |
+| [Bases de datos](Bases-de-Datos/)                      | 60 actividades SQL y 35 de empleados y departamentos, con datos de práctica |
+| [Python](Python/)                                      | Fundamentos, colecciones, control de flujo, excepciones, funciones y POO    |
+| [Django](Django/ProyectoWeb/)                          | Vistas, ORM, formularios, pedidos, servicios, blog y administración         |
 
-## Recorrido de Python
+Cada módulo incluye instrucciones y material de trabajo. El [mapa de la cursada](docs/material-de-la-cursada.md) relaciona conceptos y actividades; el [recorrido web](docs/trabajos-practicos-web.md) sigue la evolución de los trabajos.
 
-| Módulo | Contenido | Ejercicios |
-| --- | --- | ---: |
-| [Ejercicios adicionales U1](Python/00-guia-practica-u1) | Entrada/salida, decisiones y ciclos | 24 consignas utilizables; 25 con alternativa explícita para un dibujo ausente |
-| [Funciones](Python/01-funciones) | Parámetros y valores de retorno | 1 |
-| [Colecciones](Python/02-colecciones) | Listas, tuplas, diccionarios y captura de datos | 4 |
-| [Condicionales](Python/03-condicionales) | Evaluación, selección, máximo, calculadora y media | 6 |
-| [Bucles y generadores](Python/04-bucles-y-generadores) | Acumulación, búsqueda y `yield` | 3 |
-| [Excepciones](Python/05-excepciones) | Raíz cuadrada y entradas inválidas | 1 |
-| [Programación orientada a objetos](Python/06-poo/Banco) | Clases abstractas, herencia, polimorfismo y gestión de clientes | 1 actividad integradora |
-| [Guía práctica U2](Python/07-guia-practica-u2) | Funciones, fechas, números, consola y cadenas | 38 consignas principales con subapartados; propuestas nuevas |
+## Empezar por la web
 
-Cada archivo es una práctica independiente. Algunos conservan comentarios y variantes del momento de aprendizaje. Las versiones anteriores se conservan en el respaldo histórico; la correspondencia de nombres está en [procedencia](docs/procedencia.md).
-
-La actividad POO Banco y las resoluciones de U2 son propuestas nuevas basadas en consignas del material compartido; se distinguen de los quince scripts históricos. U2 conserva la numeración de sus ejercicios y sus decisiones de interpretación. No son el proyecto final de Full Stack ni recuperaciones de entregas personales antiguas.
-
-## Ejecución
-
-Se requiere Python 3.10 o posterior, sin bibliotecas adicionales. Desde la carpeta principal:
+Desde la raíz del repositorio:
 
 ```console
-python Python/03-condicionales/maximo.py
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Abrir:
+
+- `http://127.0.0.1:8000/Web/Trabajos-Practicos/Astronomia/`
+- `http://127.0.0.1:8000/Web/Trabajos-Practicos/Cocina/07-Bootstrap/`
+- `http://127.0.0.1:8000/JavaScript/`
+
+Las bibliotecas y los recursos visuales están incluidos. Los formularios estáticos validan localmente, sin enviar datos.
+
+## Python
+
+| Módulo                                                  | Contenido                                                 |
+| ------------------------------------------------------- | --------------------------------------------------------- |
+| [Guía U1](Python/00-guia-practica-u1/)                  | Expresiones, decisiones, entrada/salida y ciclos          |
+| [Funciones](Python/01-funciones/)                       | Parámetros y valores de retorno                           |
+| [Colecciones](Python/02-colecciones/)                   | Listas, tuplas y diccionarios                             |
+| [Condicionales](Python/03-condicionales/)               | Selección, máximos, calculadora y media                   |
+| [Bucles y generadores](Python/04-bucles-y-generadores/) | Acumulación, búsqueda y yield                             |
+| [Excepciones](Python/05-excepciones/)                   | Conversión de entradas y raíz cuadrada                    |
+| [POO · Banco](Python/06-poo/Banco/)                     | Abstracción, herencia, polimorfismo y gestión de clientes |
+| [Guía U2](Python/07-guia-practica-u2/)                  | 38 actividades de funciones, fechas, números y cadenas    |
+
+Con Python 3.10 o posterior:
+
+```console
 python Python/03-condicionales/calculadora.py
-python Python/05-excepciones/raiz_cuadrada.py
+python Python/06-poo/Banco/banco.py
+python Python/07-guia-practica-u2/consola.py --help
 python -m unittest discover -s pruebas -v
 ```
 
-Los ejemplos de máximo, calculadora, media y raíz tienen funciones reutilizables y un punto de entrada de consola. Las entradas inválidas muestran un mensaje y devuelven el código de salida 1. El resto de las prácticas sigue el formato de scripts de clase.
+## Aplicación Django
 
-## La formación Full Stack
+El [proyecto web](Django/ProyectoWeb/) tiene su entorno y dependencias separados. Su README explica cómo crear la base, cargar datos ficticios y comenzar con el administrador. Requiere Python 3.12 y Django 5.2.
 
-El material relacionado abarca HTML/CSS, Bootstrap, JavaScript, Vue, bases
-de datos, Python y Django. El [índice del material](docs/material-de-la-cursada.md)
-mantiene los enlaces entre ejercicios y contenidos. Esta colección cubre
-las guías Python y la entrega web identificada; no se presenta como todas
-las prácticas de SQL/Django ni como recuperación del final personal.
+## Comprobaciones web
 
-Los scripts pertenecen a Codo a Codo según la identificación de su autor. Sus fechas históricas de marzo de 2020 preceden al cronograma agosto–diciembre de 2020 de la carpeta compartida: la edición y las clases exactas de estas prácticas siguen pendientes de correlación documental. No se atribuye una clase concreta basándose únicamente en la similitud de temas.
+Con Node.js 20 o posterior, sin instalar paquetes:
 
-## Comportamientos revisados
+```console
+npm run test:web
+node JavaScript/demostracion.mjs
+```
 
-La calculadora usa operandos enteros como en el ejercicio original y conserva su precisión en suma, resta y multiplicación. La división utiliza el resultado de la división real de Python.
+## Créditos
 
-El máximo verifica ambas notas en `[0, 10]`, la calculadora informa la división por cero y las operaciones desconocidas, la media consulta tres valores una sola vez y la raíz también captura errores al convertir el texto ingresado. La media conserva el intervalo `(0, 10]` del código guardado, porque no se recuperó su consigna específica. Las [pruebas](pruebas/test_python.py) incluyen regresiones de estos casos y una ejecución de los quince scripts.
+Autor: Fernando Toralez. Se incluyen prácticas históricas y desarrollos posteriores sobre las consignas de la cursada. El material de terceros y las bibliotecas conservan sus [créditos y licencias](CREDITOS.md).

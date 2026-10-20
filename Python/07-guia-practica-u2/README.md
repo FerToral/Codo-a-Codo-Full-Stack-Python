@@ -1,16 +1,8 @@
 # Python · Guía práctica U2
 
-Funciones, secuencias, cadenas y programas de consola. Soluciones nuevas
-de mantenimiento de 2026, basadas en la guía de la carpeta compartida
-de Codo a Codo Full Stack. No son archivos personales recuperados ni
-se adscriben a una clase de marzo sólo por compartir temas.
+Funciones, secuencias, fechas, cadenas y programas de consola. La numeración permite estudiar cada función y probarla de forma independiente.
 
 ## Consigna y recorrido
-
-Fuente: **Python - Actividad Practica U2.pdf**, seis páginas,
-en [Material de clase / Python](https://drive.google.com/drive/folders/1Fpgw944KMCjIpe4xY1KBQU8MWZISmCQ-).
-El PDF se conserva en el respaldo privado con la teoría; aquí se enlaza
-sin redistribuirlo ni reproducirlo íntegro.
 
 | Ejercicios de la guía | Archivo | Contenido |
 |---|---|---|
@@ -27,7 +19,7 @@ sin redistribuirlo ni reproducirlo íntegro.
 
 Quedan cubiertos los ejercicios principales 1–36 y los dos apartados
 finales numerados 6.8–6.9: 38 consignas principales con sus subapartados.
-Esto completa esta guía identificada, no toda la formación Full Stack.
+
 
 ## Ejecución
 

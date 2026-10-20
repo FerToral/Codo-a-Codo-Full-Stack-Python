@@ -6,3 +6,8 @@
 *.css text eol=lf
 *.js text eol=lf
 *.cjs text eol=lf
+*.mjs text eol=lf
+*.sql text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.pdf binary

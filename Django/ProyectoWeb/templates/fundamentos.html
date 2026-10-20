@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+    Fundamentos{% endblock %}
+{% block content %}
+    <p class="etiqueta">Vistas y contexto</p>
+    <h1>Hola, {{ persona.nombre }}.</h1>
+    <p class="bajada">Esta plantilla recibe una persona y la fecha desde la vista. Usa variables, condiciones y un ciclo.</p>
+    <dl>
+        <dt>Nombre completo</dt>
+        <dd>
+            {{ persona.nombre }} {{ persona.apellido }}
+        </dd>
+        <dt>Edad</dt>
+        <dd>{{ persona.edad }} · {% if persona.edad >= 18 %}
+            Mayor de edad{% else %}
+            Menor de edad{% endif %}
+    </dd>
+    <dt>Fecha</dt>
+    <dd>
+        {{ hoy|date:'d/m/Y' }}
+    </dd>
+</dl>
+<h2>Hermanos</h2>
+<ul>
+    {% for nombre in persona.hermanos %}
+        <li>{{ nombre }}</li>{% empty %}
+        <li>No hay datos.</li>{% endfor %}
+</ul>
+<p>Otras vistas: <a href="{% url 'saludo' %}">respuesta de texto</a> · <a href="{% url 'fecha' %}">fecha del servidor</a>.</p>{% endblock %}

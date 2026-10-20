@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La carta con Vue · La cocina de Juan</title>
+    <link rel="stylesheet" href="../../../recursos/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../recursos/cocina.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="index.html">La cocina de Juan</a
+        ><a href="../11-SPA/index.html">Continuar con SPA →</a>
+      </nav>
+    </header>
+    <main id="app" v-cloak>
+      <p class="etiqueta">TP10 · Vue y Bootstrap</p>
+      <h1>Una carta que responde.</h1>
+      <p class="bajada">
+        El array de productos se carga en <code>data</code>. Vue actualiza el
+        listado cuando cambia la búsqueda o la categoría.
+      </p>
+      <div class="filtros">
+        <label>Buscar<input type="search" v-model="busqueda" /></label
+        ><label
+          >Categoría<select v-model="categoria">
+            <option>Todas</option>
+            <option>Vegetariano</option>
+            <option>Vegano</option>
+            <option>Con carne</option>
+          </select></label
+        >
+        <p role="status">{{ filtrados.length }} platos</p>
+      </div>
+      <div class="row">
+        <article
+          class="col-sm-6 col-lg-4 mb-4"
+          v-for="producto in filtrados"
+          :key="producto.codigo"
+        >
+          <div class="card h-100">
+            <img class="card-img-top" :src="producto.imagen" alt="" />
+            <div class="card-body">
+              <h2 class="h4 card-title">{{ producto.nombre }}</h2>
+              <p class="card-text">{{ producto.descripcion }}</p>
+              <p class="datos">
+                {{ producto.categoria }} · {{ producto.minutos }} min
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p v-if="!filtrados.length">
+        No hay platos que coincidan. Probá otra búsqueda.
+      </p>
+    </main>
+    <noscript>Esta práctica necesita JavaScript.</noscript>
+    <footer>La cocina de Juan · Vue: data, v-for, v-model y computed</footer>
+    <script src="../../../recursos/vendor/vue.min.js"></script>
+    <script type="module">
+      import { productos, filtrarProductos } from "../recursos/productos.js";
+      new Vue({
+        el: "#app",
+        data: { productos, busqueda: "", categoria: "Todas" },
+        computed: {
+          filtrados() {
+            return filtrarProductos(
+              this.productos,
+              this.busqueda,
+              this.categoria,
+            );
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

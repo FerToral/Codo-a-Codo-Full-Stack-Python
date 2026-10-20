@@ -1,47 +1,30 @@
-# Material de la formación Full Stack
+# Mapa de la cursada
 
-La carpeta compartida [CaC 2020 — Full Stack Python](https://drive.google.com/drive/folders/1iX003hpvByV2uI3pheSL5bJdRj1iNF6M) conserva el material de clase y los trabajos prácticos. Los enlaces requieren acceso a esa carpeta; los documentos también están guardados en el respaldo local del curso.
+El recorrido Full Stack conecta presentación, interacción, datos y lógica del servidor.
 
-## Relación entre módulos y contenidos
+| Etapa      | Conceptos                                            | Trabajo disponible                                                                                                        |
+| ---------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| HTML/CSS   | Estructura, listas, tablas, formularios y adaptación | [Órbita](../Web/Trabajos-Practicos/Astronomia/)                                                                           |
+| Bootstrap  | Grilla, navegación y carrusel                        | [Cocina · TP07](../Web/Trabajos-Practicos/Cocina/07-Bootstrap/)                                                           |
+| JavaScript | Expresiones, funciones, ciclos, arrays y cadenas     | [Actividades](../JavaScript/) y [consignas](../JavaScript/CONSIGNAS.md)                                                   |
+| DOM        | Eventos, plantillas y creación de elementos          | [Catálogo · TP08–09](../Web/Trabajos-Practicos/Cocina/08-09-DOM/) y [práctica de tareas](../JavaScript/04-dom-y-eventos/) |
+| Vue        | Estado reactivo, filtros y SPA                       | [TP10](../Web/Trabajos-Practicos/Cocina/10-Vue/) y [TP11](../Web/Trabajos-Practicos/Cocina/11-SPA/)                       |
+| SQL        | Selección, joins, agregaciones y relaciones          | [Guía, consultas y datos](../Bases-de-Datos/)                                                                             |
+| Python     | Funciones, colecciones, ciclos, excepciones y POO    | [U1](../Python/00-guia-practica-u1/), [Banco](../Python/06-poo/Banco/) y [U2](../Python/07-guia-practica-u2/)             |
+| Django     | Vistas, contexto, ORM, formularios y administración  | [Proyecto web](../Django/ProyectoWeb/)                                                                                    |
 
-El cronograma de la carpeta compartida corresponde a agosto–diciembre de 2020. La numeración siguiente describe ese cronograma, no una equivalencia demostrada con los archivos personales de marzo.
+## Cómo estudiar
 
-| Área | Clases del cronograma | Material y relación con las prácticas |
-| --- | --- | --- |
-| [HTML y CSS](https://drive.google.com/drive/folders/1_1kTfqcd98NiDxXz5Y93clQEH9lLndN7) | 2–10 | Teoría y ejemplos web. Los TP01–05 y el integrador TP06 permanecen junto con sus consignas en Trabajos prácticos. |
-| Bootstrap | 11–12 | Componentes y diseño adaptable; sección propia en Material de clase. |
-| [JavaScript](https://drive.google.com/drive/folders/1VsBfJxvXjX6Ylty2YUfLueCGWZgAQF_l) | 13–18 | Ejercicios adicionales de clases 14 y 16 y recursos de JavaScript. No se asignan a Python por compartir la carpeta del curso. |
-| Vue | 19–22 | TP10 y TP11 incluyen consignas y sitios de ejemplo en carpetas contiguas. |
-| [Bases de datos](https://drive.google.com/drive/folders/1w0Z9UQ7GDwkKWGnoajjU6GrkdZfqA2f3) | 26–29 | Guía práctica de SQL, modelo relacional y ejemplos MySQL. Se recuperaron seis `.sql`, incluyendo empleados/departamentos, escuelas y world. |
-| [Python](https://drive.google.com/drive/folders/1Fpgw944KMCjIpe4xY1KBQU8MWZISmCQ-) | 30–37 | Actividad Práctica U1/U2, funciones, colecciones, condicionales, iteración, objetos y excepciones. Los quince ejercicios de este repositorio cubren parte de esos temas. |
-| [Django](https://drive.google.com/drive/folders/1lKI9Dejqetb5HaUXKLdgY4uroEvJwi4h) | 38–39 | `ProyectosDjango/Proyecto2019` y `ProyectosDjango/TiendaEnLinea` están dentro de Material de clase. Son referencias docentes cuya autoría personal no se ha acreditado. |
+1. Leer la consigna o el recorrido del módulo.
+2. Ejecutar el ejemplo con los datos incluidos.
+3. Modificar una entrada, un producto o una regla y observar el resultado.
+4. Revisar la solución y sus pruebas.
+5. Continuar al trabajo que aplica ese concepto en un sitio o aplicación.
 
-## Python: guía de consulta
+Los archivos necesarios para las actividades están dentro del repositorio. La guía SQL conserva su formato PDF; las demás consignas se acompañan con descripciones de trabajo y notas. Los documentos originales se mantienen en el archivo histórico de la cursada.
 
-| Carpeta de prácticas | Archivos del material de Python con temas relacionados |
-| --- | --- |
-| `01-funciones` | `funciones_1.py`, `funciones_2.py`, `ejercicio_funciones_listas.py` |
-| `02-colecciones` | `listas_arrays.py`, `diccionarios_tuplas_conjuntos.py`, `ejemplos_listas_cadenas.py` |
-| `03-condicionales` | `estructuras_condicionales.py`, `tipos_operadores.py` |
-| `04-bucles-y-generadores` | `estructuras_iterativas.py`; el enunciado exacto de las prácticas de generadores sigue pendiente |
-| `05-excepciones` | `excepciones_1.py` a `excepciones_5.py`, `ejemplo_fn_raiz_parametro_por_defecto.py` |
+## Relación entre ejercicios
 
-Estas relaciones son por tema. No se ha comprobado que una práctica personal sea respuesta a un enunciado determinado de U1/U2.
+Las prácticas de JavaScript preparan el catálogo y los formularios del sitio. Vue retoma el catálogo para estudiar estado reactivo. Las relaciones de SQL reaparecen en el ORM de Django; Python aporta las funciones y clases que utiliza el servidor.
 
-Las resoluciones nuevas se organizan por guía: U1 tiene 24 consignas
-utilizables y una alternativa explícita para el dibujo ausente del 25;
-el número 19 no aparece en el PDF. U2 cubre 1–36 y los apartados finales
-6.8–6.9. Se mantienen separadas de las respuestas personales históricas.
-El ejercicio U1/22 tiene versiones de terminal y navegador enlazadas.
-
-El [directorio de trabajos prácticos](https://drive.google.com/drive/folders/1RMFTMV784Pxqetnil2hfbt0Me82LITJr) reúne los enunciados. Los ejemplos, libros, presentaciones y soluciones docentes permanecen en ese material y en su respaldo, conservando su contexto y autoría.
-
-## Bases de datos y Django
-
-El [mapa de TP01–TP11](trabajos-practicos-web.md) relaciona las consignas
-web con la evolución del sitio y diferencia ejemplos docentes de entregas
-personales.
-
-El material recuperado documenta MySQL: incluye `Instalación de MySQL.pdf`, guías MySQL, seis archivos SQL y ejemplos con `USE`. El recuerdo del autor sobre PostgreSQL queda como pista para buscar otra carpeta o entrega; todavía no hay evidencia suficiente para asignar a PostgreSQL estos archivos.
-
-La presencia de `manage.py`, modelos y migraciones en los proyectos de Material de clase permite estudiar Django, pero no demuestra la recuperación de un proyecto final personal. La restauración de una entrega web requiere identificar su repositorio o carpeta de trabajo antes de combinarla con estos ejercicios.
+Cada etapa conserva su alcance y su forma de ejecución. Las bibliotecas y el material de terceros se detallan en [créditos](../CREDITOS.md).

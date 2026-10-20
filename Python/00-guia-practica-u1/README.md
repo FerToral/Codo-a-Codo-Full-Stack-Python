@@ -1,9 +1,6 @@
 # Python · Ejercicios adicionales U1
 
-Entrada/salida, expresiones, decisiones y ciclos. Resoluciones nuevas de
-2026 para estudiar la guía **Python - Actividad Practica U1.pdf** de
-[Material de clase / Python](https://drive.google.com/drive/folders/1Fpgw944KMCjIpe4xY1KBQU8MWZISmCQ-).
-El PDF original y sus tres páginas permanecen en el respaldo privado.
+Entrada/salida, expresiones, decisiones y ciclos. Cada actividad se ejecuta desde la consola y conserva la numeración de la guía U1.
 
 | Numeración original | Actividad |
 |---|---|
@@ -18,8 +15,7 @@ El PDF original y sus tres páginas permanecen en el respaldo privado.
 
 El documento no contiene el número 19. El 25 anuncia «la pirámide
 siguiente», pero no muestra el dibujo, tampoco al renderizar la página:
-la propuesta acumulativa es una decisión nueva, no una recuperación del
-patrón faltante. Hay 24 consignas utilizables y esa alternativa explícita.
+se incluye una variante acumulativa para practicar ese tipo de patrón. Hay 24 consignas utilizables y esa alternativa explícita.
 
 ## Ejecución y convenciones
 
@@ -39,6 +35,4 @@ asesoramiento sobre edad legal). Los intervalos de notas se interpretan
 cerrados a izquierda y abiertos a derecha, con 10 incluido en la última
 categoría. Se normalizan mayúsculas para vocales, no tildes. En el 9 cada
 vocal presente se muestra una vez en orden a/e/i/o/u. Los divisores son
-positivos; cero se rechaza porque su lista no sería finita. Los scripts
-personales anteriores se conservan en sus módulos y no se reemplazan por
-esta propuesta sólo porque sus temas coincidan.
+positivos; cero se rechaza porque su lista no sería finita.

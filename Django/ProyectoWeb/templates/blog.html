@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+    Blog{% endblock %}
+{% block content %}
+    <p class="etiqueta">Autores y categorías</p>
+    <h1>Apuntes del taller.</h1>
+    <nav aria-label="Categorías" class="linea">
+        <a href="{% url 'blog' %}"
+           {% if not categoria %} aria-current="page"{% endif %}>Todas</a>{% for cat in categorias %}
+        <a href="?categoria={{ cat.pk }}"
+           {% if categoria.pk == cat.pk %} aria-current="page"{% endif %}>{{ cat.nombre }}</a>{% endfor %}
+</nav>
+{% for post in publicaciones %}
+    <article class="publicacion">
+        <p class="etiqueta">{{ post.creado|date:'d/m/Y' }} · {{ post.autor.get_full_name|default:post.autor.username }}</p>
+        <h2>{{ post.titulo }}</h2>{% if post.imagen %}
+        <img class="contenido-imagen"
+             src="{{ post.imagen.url }}"
+             alt="{{ post.titulo }}">
+{% endif %}
+{{ post.contenido|linebreaks }}<p class="nota">{% for cat in post.categorias.all %}
+{{ cat.nombre }}{% if not forloop.last %}
+· {% endif %}
+{% endfor %}
+</p>
+</article>{% empty %}
+<p>No hay publicaciones en esta categoría.</p>{% endfor %}
+{% endblock %}
