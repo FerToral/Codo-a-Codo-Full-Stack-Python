@@ -9,7 +9,7 @@ export const productos = [
   },
   {
     codigo: "P02",
-    imagen: "../recursos/plato.svg",
+    imagen: "../recursos/tarta.svg",
     nombre: "Tarta de verduras",
     descripcion: "Masa casera con zapallito, cebolla y queso.",
     categoria: "Vegetariano",
@@ -17,7 +17,7 @@ export const productos = [
   },
   {
     codigo: "P03",
-    imagen: "../recursos/plato.svg",
+    imagen: "../recursos/arroz-pollo.svg",
     nombre: "Arroz con pollo",
     descripcion: "Una receta de olla con arroz, pollo y verduras.",
     categoria: "Con carne",
@@ -25,7 +25,7 @@ export const productos = [
   },
   {
     codigo: "P04",
-    imagen: "../recursos/plato.svg",
+    imagen: "../recursos/lentejas.svg",
     nombre: "Guiso de lentejas",
     descripcion: "Lentejas, calabaza y pimentón, sin ingredientes animales.",
     categoria: "Vegano",
@@ -33,7 +33,7 @@ export const productos = [
   },
   {
     codigo: "P05",
-    imagen: "../recursos/plato.svg",
+    imagen: "../recursos/sopa.svg",
     nombre: "Sopa de calabaza",
     descripcion: "Calabaza asada, caldo de verduras y semillas.",
     categoria: "Vegano",
@@ -41,7 +41,7 @@ export const productos = [
   },
   {
     codigo: "P06",
-    imagen: "../recursos/plato.svg",
+    imagen: "../recursos/pasta.svg",
     nombre: "Pasta con tomate",
     descripcion: "Pasta corta, salsa de tomate y albahaca fresca.",
     categoria: "Vegetariano",

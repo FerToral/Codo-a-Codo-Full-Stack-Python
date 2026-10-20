@@ -3,8 +3,20 @@ import assert from "node:assert/strict";
 import { readdir, readFile, stat } from "node:fs/promises";
 import { resolve, dirname, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { productos } from "../../Web/Trabajos-Practicos/Cocina/recursos/productos.js";
 
 const raiz = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+test("cada plato tiene una ilustración local propia", async () => {
+  assert.equal(new Set(productos.map((p) => p.imagen)).size, productos.length);
+  for (const producto of productos) {
+    const destino = resolve(
+      raiz,
+      "Web/Trabajos-Practicos/Cocina/11-SPA",
+      producto.imagen,
+    );
+    assert.ok((await stat(destino)).isFile());
+  }
+});
 async function archivos(carpeta) {
   const salida = [];
   for (const entrada of await readdir(carpeta, { withFileTypes: true })) {
