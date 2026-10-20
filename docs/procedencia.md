@@ -46,3 +46,12 @@ Las pruebas verifican los errores concretos corregidos y ejecutan los quince arc
 ## Ampliación POO — 2026
 
 La actividad opcional **POO Banco** se identifica por la consigna del material compartido de Codo a Codo Full Stack Python (carpeta Python del curso). La implementación en `Python/06-poo/Banco` es una propuesta nueva de estudio asistida en 2026, no una entrega histórica recuperada ni el proyecto final del curso. Los ejemplos docentes `banco.py` y `cliente.py` originales permanecen en el respaldo privado; no se publican como respuestas personales. La edición exacta de la comisión continúa sin acreditarse.
+
+## Guía práctica U2 — 2026
+
+Las resoluciones de funciones, secuencias y cadenas son nuevas, con asistencia
+de IA y pruebas sobre su código real. Se basan en la guía U2 conservada en
+Material de clase/Python de la carpeta compartida. Se publican las respuestas
+y un mapa de ejercicios; no el PDF docente ni las soluciones de otros alumnos.
+Los quince scripts personales anteriores permanecen diferenciados y no se
+sustituyen por estas implementaciones.

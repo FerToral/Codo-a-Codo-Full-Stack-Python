@@ -12,10 +12,11 @@ Ejercicios de Python de la formación Full Stack de Codo a Codo: funciones, cole
 | [Bucles y generadores](Python/04-bucles-y-generadores) | Acumulación, búsqueda y `yield` | 3 |
 | [Excepciones](Python/05-excepciones) | Raíz cuadrada y entradas inválidas | 1 |
 | [Programación orientada a objetos](Python/06-poo/Banco) | Clases abstractas, herencia, polimorfismo y gestión de clientes | 1 actividad integradora |
+| [Guía práctica U2](Python/07-guia-practica-u2) | Funciones, secuencias, consola y cadenas | 25 ejercicios principales de la guía; propuestas nuevas |
 
 Cada archivo es una práctica independiente. Algunos conservan comentarios y variantes del momento de aprendizaje. Las versiones anteriores se conservan en el respaldo histórico; la correspondencia de nombres está en [procedencia](docs/procedencia.md).
 
-La actividad POO Banco es una propuesta nueva de resolución basada en una consigna acreditada del material compartido; se distingue de los quince scripts históricos. No es el proyecto final de Full Stack ni una recuperación de una entrega personal antigua.
+La actividad POO Banco y las resoluciones de U2 son propuestas nuevas basadas en consignas del material compartido; se distinguen de los quince scripts históricos. U2 conserva la numeración de sus ejercicios y sus decisiones de interpretación. No son el proyecto final de Full Stack ni recuperaciones de entregas personales antiguas.
 
 ## Ejecución
 

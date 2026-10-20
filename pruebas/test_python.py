@@ -105,8 +105,13 @@ class EjecucionDeConsola(unittest.TestCase):
             "05-excepciones/raiz_cuadrada.py": ("9\n", "Resultado: 3.0"),
         }
         archivos = {archivo.relative_to(PYTHON).as_posix() for archivo in PYTHON.rglob("*.py")}
-        # Los dos módulos POO tienen su propia batería en test_banco.py.
-        self.assertEqual(archivos, set(casos) | {"06-poo/Banco/banco.py", "06-poo/Banco/cliente.py"})
+        # POO y U2 tienen baterías propias; el inventario sigue siendo explícito.
+        adicionales = {
+            "06-poo/Banco/banco.py", "06-poo/Banco/cliente.py",
+            "07-guia-practica-u2/funciones.py", "07-guia-practica-u2/cadenas.py",
+            "07-guia-practica-u2/consola.py",
+        }
+        self.assertEqual(archivos, set(casos) | adicionales)
         for archivo, (entrada, esperado) in casos.items():
             with self.subTest(archivo=archivo):
                 proceso = self.ejecutar(archivo, entrada)
