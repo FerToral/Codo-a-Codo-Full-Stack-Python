@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Satélites · Órbita</title>
+    <link rel="stylesheet" href="astronomia.css" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="marca" href="index.html">Órbita <span>CaC · 2020</span></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pag0.html">Estrellas</a></li>
+          <li><a href="pag1.html">Astronomía</a></li>
+          <li><a href="pag2.html">Sistema solar</a></li>
+          <li>
+            <a href="pag3.html" class="active" aria-current="page">Satélites</a>
+          </li>
+          <li><a href="pag4.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="pantalla">
+      <div class="contenedor-pantalla">
+        <div class="text-contenedor">
+          <p class="antetitulo">Un recorrido por la astronomía</p>
+          <h1 class="tittle-pantalla">Compañeros de viaje.</h1>
+          <p class="bajada">No todo satélite fue construido por personas.</p>
+        </div>
+        <svg
+          class="cielo"
+          viewBox="0 0 500 360"
+          role="img"
+          aria-labelledby="cielo-titulo"
+        >
+          <title id="cielo-titulo">
+            Diagrama decorativo de órbitas; no está a escala
+          </title>
+          <g fill="none" stroke="currentColor" opacity=".45">
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="215"
+              ry="90"
+              transform="rotate(-25 245 180)"
+            />
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="155"
+              ry="65"
+              transform="rotate(-25 245 180)"
+            />
+            <circle cx="245" cy="180" r="37" />
+          </g>
+          <circle cx="245" cy="180" r="22" fill="#e8bf6b" />
+          <circle cx="390" cy="80" r="11" fill="#7baecb" />
+          <circle cx="132" cy="202" r="7" fill="#d88763" />
+          <g fill="white">
+            <circle cx="30" cy="65" r="2" />
+            <circle cx="130" cy="55" r="2" />
+            <circle cx="415" cy="265" r="2" />
+            <circle cx="342" cy="330" r="2" />
+            <circle cx="59" cy="302" r="2" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="contenedor">
+      <main id="contenido" class="contenido">
+        <h2>Una palabra, dos orígenes</h2>
+        <p>
+          Un satélite es un objeto que orbita otro. Los hay naturales, como la
+          Luna alrededor de la Tierra, y artificiales, construidos para una
+          misión.
+        </p>
+        <div
+          class="tabla"
+          role="region"
+          aria-label="Tipos de satélites"
+          tabindex="0"
+        >
+          <table>
+            <caption>
+              Cómo distinguirlos
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Ejemplo o uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Natural</th>
+                <td>La Luna, satélite natural de la Tierra.</td>
+              </tr>
+              <tr>
+                <th scope="row">Artificial</th>
+                <td>Observación, comunicaciones o investigación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          También existen lunas alrededor de otros planetas y de cuerpos más
+          pequeños. Su número conocido cambia con nuevos descubrimientos.
+        </p>
+        <p class="fuente">
+          Lecturas:
+          <a href="https://www.nasa.gov/general/what-is-a-satellite/"
+            >NASA · What is a satellite?</a
+          >
+          y
+          <a href="https://science.nasa.gov/solar-system/moons/"
+            >NASA Science · Moons</a
+          >.
+        </p>
+      </main>
+      <aside class="sidebar">
+        <h2>Qué mirar en una fuente</h2>
+        <p>
+          Para un recuento de lunas, buscá la fecha y qué cuerpos incluye. Una
+          cifra sin contexto envejece más rápido que una buena definición.
+        </p>
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>
+        Fernando Toralez · Práctica web de Codo a Codo, 2020 · Revisión 2026.
+      </p>
+      <p>
+        Textos y gráficos de esta revisión elaborados para el sitio.
+        <a href="README.md">Contexto y fuentes</a>.
+      </p>
+    </footer>
+    <script src="sitio.js" defer></script>
+  </body>
+</html>

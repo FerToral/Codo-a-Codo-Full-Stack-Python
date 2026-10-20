@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Letra del DNI · Práctica U1</title>
+  <style>
+    :root {
+      font-family: system-ui, sans-serif;
+      color: #172c35;
+      background: #faf9f5;
+    }
+    body {
+      margin: 0;
+      border-top: 8px solid #16716d;
+    }
+    main {
+      max-width: 38rem;
+      margin: clamp(2rem, 9vw, 7rem) auto;
+      padding: 0 1.4rem;
+    }
+    .curso {
+      color: #16716d;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      line-height: 1.1;
+      max-width: 13ch;
+    }
+    p {
+      line-height: 1.7;
+    }
+    form {
+      margin: 2rem 0;
+    }
+    label {
+      display: block;
+      font-weight: 650;
+      margin-bottom: 0.6rem;
+    }
+    .entrada {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    input,
+    button {
+      font: inherit;
+      padding: 0.85rem;
+      border: 1px solid #607779;
+      border-radius: 4px;
+    }
+    input {
+      flex: 1;
+      min-width: 0;
+      width: 12rem;
+      background: white;
+    }
+    button {
+      background: #16625f;
+      color: white;
+      cursor: pointer;
+    }
+    :focus-visible {
+      outline: 3px solid #be5e12;
+      outline-offset: 3px;
+    }
+    #resultado {
+      min-height: 3.6rem;
+      font-size: 1.4rem;
+      font-weight: 650;
+    }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #c4ceca;
+      padding-top: 1rem;
+    }
+  </style>
+  <main>
+    <p class="curso">Codo a Codo · Práctica U1 / 22</p>
+    <h1>Un número, una letra.</h1>
+    <p>
+      Calculá la letra de control del DNI español. Es un ejercicio de
+      divisibilidad; no valida una identidad ni se aplica al DNI argentino.
+    </p>
+    <form id="formulario" novalidate>
+      <label for="numero">Parte numérica</label>
+      <p id="ayuda">
+        Ingresá de 1 a 8 dígitos, sin puntos ni letra. No se guarda ni se envía
+        el dato.
+      </p>
+      <div class="entrada">
+        <input
+          id="numero"
+          inputmode="numeric"
+          autocomplete="off"
+          maxlength="8"
+          aria-describedby="ayuda resultado"
+          required
+        />
+        <button type="submit">Calcular letra</button>
+        <button type="reset">Limpiar</button>
+      </div>
+    </form>
+    <p id="resultado" role="status" aria-live="polite"></p>
+    <footer>
+      La letra se obtiene del resto de dividir por 23.
+      <a href="../../../Python/00-guia-practica-u1/README.md"
+        >Contexto y consigna</a
+      >.
+    </footer>
+  </main>
+  <script>
+    const formulario = document.getElementById("formulario");
+    const campo = document.getElementById("numero");
+    const resultado = document.getElementById("resultado");
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const valor = campo.value.trim();
+      const valido = /^\d{1,8}$/.test(valor);
+      campo.setAttribute("aria-invalid", String(!valido));
+      resultado.textContent = valido
+        ? "La letra es " + "TRWAGMYFPDXBNJZSQVHLCKE"[Number(valor) % 23]
+        : "Ingresá de 1 a 8 dígitos, sin puntos ni letra.";
+      if (!valido) campo.focus();
+    });
+    formulario.addEventListener("reset", () => {
+      campo.removeAttribute("aria-invalid");
+      resultado.textContent = "";
+      campo.focus();
+    });
+  </script>
+</html>

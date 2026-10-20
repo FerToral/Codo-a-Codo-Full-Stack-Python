@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    Servicios{% endblock %}
+{% block content %}
+    <p class="etiqueta">Modelos y administración</p>
+    <h1>Servicios para un sitio en marcha.</h1>
+    <p class="bajada">El contenido de esta página se administra desde Django, sin editar el HTML.</p>
+    <section class="lista">
+        {% for servicio in servicios %}
+            <article>
+                <span>{{ forloop.counter|stringformat:'02d' }}</span>
+                <div>
+                    <h2>{{ servicio.titulo }}</h2>{{ servicio.contenido|linebreaks }}{% if servicio.imagen %}
+                    <img class="contenido-imagen"
+                         src="{{ servicio.imagen.url }}"
+                         alt="{{ servicio.titulo }}">
+        {% endif %}
+    </div>
+    </article>{% empty %}
+    <p>Todavía no hay servicios. Cargá los datos de demostración o agregá uno desde administración.</p>{% endfor %}
+</section>
+{% endblock %}

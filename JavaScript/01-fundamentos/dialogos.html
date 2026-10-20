@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Diálogos y escritura · CaC</title>
+  </head>
+  <body
+    style="
+      font: 18px/1.7 system-ui;
+      max-width: 45rem;
+      margin: 3rem auto;
+      padding: 1rem;
+    "
+  >
+    <h1>Los primeros diálogos</h1>
+    <p>Ejercicios 1, 2 y 20–22 de la guía de clase 14.</p>
+    <button id="alerta">Saludo con alert</button
+    ><button id="escritura">Escribir Hello World</button>
+    <iframe id="documento" title="Salida de document.write"></iframe>
+    <p>
+      document.write se ejecuta en este documento aparte para no borrar la
+      página principal.
+    </p>
+    <button id="textos">Concatenar textos</button
+    ><button id="sumar">Sumar números</button
+    ><button id="dni">Letra del DNI</button>
+    <pre id="resultado" role="status"></pre>
+    <a href="../index.html">Volver</a>
+    <script type="module">
+      import { leerHastaCancelar, resolver, letraDni } from "./ejercicios.js";
+      const salida = document.querySelector("#resultado");
+      document.querySelector("#alerta").onclick = () => alert("Hello World");
+      document.querySelector("#escritura").onclick = () => {
+        const doc = document.querySelector("#documento").contentDocument;
+        doc.open();
+        doc.write("<p>Hello World</p>");
+        doc.close();
+      };
+      document.querySelector("#textos").onclick = () => {
+        salida.textContent = resolver(20, [leerHastaCancelar()]);
+      };
+      document.querySelector("#sumar").onclick = () => {
+        let suma = 0;
+        for (
+          let s = prompt("Número; Cancelar termina");
+          s !== null;
+          s = prompt("Otro número; Cancelar termina")
+        ) {
+          const n = s.trim() === "" ? NaN : Number(s);
+          if (Number.isFinite(n)) suma += n;
+          else alert("No es un número válido");
+        }
+        salida.textContent = String(suma);
+      };
+      document.querySelector("#dni").onclick = () => {
+        for (
+          let s = prompt("DNI; Cancelar termina");
+          s !== null;
+          s = prompt("Otro DNI; Cancelar termina")
+        ) {
+          try {
+            if (!/^\d{1,8}$/.test(s)) throw Error();
+            salida.textContent = letraDni(Number(s));
+          } catch {
+            alert("DNI inválido");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

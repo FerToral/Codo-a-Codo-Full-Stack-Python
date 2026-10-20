@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DOM y eventos · CaC</title>
+    <style>
+      :root {
+        font: 17px/1.6 system-ui;
+        color: #1c3535;
+        background: #faf8f1;
+      }
+      main {
+        max-width: 44rem;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+        padding: 0.55rem;
+      }
+      input[type="text"] {
+        width: min(60%, 25rem);
+      }
+      ul {
+        padding-left: 1.5rem;
+      }
+      li {
+        padding: 0.7rem 0;
+        border-bottom: 1px solid #b9c7c4;
+      }
+      li button {
+        float: right;
+      }
+      label:has(input:checked) {
+        text-decoration: line-through;
+      }
+      a {
+        color: #146b62;
+      }
+      :focus-visible {
+        outline: 3px solid #b45a25;
+        outline-offset: 3px;
+      }
+      [data-tema="oscuro"] {
+        background: #142b2b;
+        color: #e6efeb;
+      }
+      #estado {
+        min-height: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Codo a Codo · JavaScript</p>
+      <h1>Una lista hecha con el DOM</h1>
+      <p>
+        Elementos, eventos y una preferencia de tema guardada en el navegador.
+      </p>
+      <label for="tema">Tema</label>
+      <select id="tema">
+        <option value="claro">Claro</option>
+        <option value="oscuro">Oscuro</option>
+      </select>
+      <form id="nueva-tarea">
+        <label for="tarea">Tarea</label>
+        <input
+          type="text"
+          id="tarea"
+          name="tarea"
+          maxlength="120"
+          required
+        /><button>Agregar</button>
+      </form>
+      <p id="estado" role="status"></p>
+      <ul id="tareas"></ul>
+      <p>
+        Las tareas no se guardan. Sólo se conserva el tema; no ingreses datos
+        personales.
+      </p>
+      <a href="../index.html">Volver a las prácticas</a>
+    </main>
+    <script type="module" src="practica.js"></script>
+  </body>
+</html>

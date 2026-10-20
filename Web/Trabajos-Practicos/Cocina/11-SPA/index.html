@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La cocina de Juan · SPA</title>
+    <link rel="stylesheet" href="../recursos/cocina.css" />
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <a class="salto" href="#contenido">Saltar al contenido</a>
+      <header>
+        <nav
+          class="navbar"
+          aria-label="Principal"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+          "
+        >
+          <a class="navbar-brand" href="#inicio">La cocina de Juan</a>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+            <a
+              v-for="(titulo,clave) in secciones"
+              :key="clave"
+              :href="'#'+clave"
+              :aria-current="seccion===clave?'page':null"
+              >{{ titulo }}</a
+            >
+          </div>
+        </nav>
+      </header>
+      <main id="contenido">
+        <section v-if="seccion==='inicio'" class="portada">
+          <div>
+            <p class="etiqueta">TP11 · Un sitio, una página</p>
+            <h1>Una mesa para todos los días.</h1>
+            <p class="bajada">
+              Comida casera, ingredientes de estación y tiempo para disfrutar.
+            </p>
+            <a class="btn-cocina" href="#carta">Explorar la carta</a>
+          </div>
+          <img
+            src="../recursos/plato.svg"
+            alt="Plato de verduras, huevo y pan"
+          />
+        </section>
+        <section v-else-if="seccion==='carta'">
+          <p class="etiqueta">La carta</p>
+          <h1>Elegí tu próximo plato.</h1>
+          <div class="filtros">
+            <label>Buscar<input type="search" v-model="busqueda" /></label
+            ><label
+              >Categoría<select v-model="categoria">
+                <option>Todas</option>
+                <option>Vegetariano</option>
+                <option>Vegano</option>
+                <option>Con carne</option>
+              </select></label
+            >
+            <p role="status">{{ filtrados.length }} platos</p>
+          </div>
+          <div class="platos">
+            <article class="plato" v-for="p in filtrados" :key="p.codigo">
+              <img :src="p.imagen" alt="" />
+              <h2>{{ p.nombre }}</h2>
+              <p>{{ p.descripcion }}</p>
+              <p class="datos">{{ p.categoria }} · {{ p.minutos }} min</p>
+            </article>
+          </div>
+          <p v-if="!filtrados.length">
+            No hay resultados. Cambiá los filtros para volver a ver la carta.
+          </p>
+        </section>
+        <section v-else-if="seccion==='nosotros'">
+          <p class="etiqueta">Nosotros</p>
+          <h1>Cocinar sin complicaciones.</h1>
+          <p class="bajada">
+            Una carta chica puede tener mucho para contar: verduras de estación,
+            recetas conocidas y ganas de compartir.
+          </p>
+          <h2>Cómo funciona esta página</h2>
+          <p>
+            Vue conserva el estado de los filtros y muestra cada sección sin
+            recargar el documento. Las rutas usan el fragmento de la URL, por lo
+            que se pueden compartir y recorrer con los botones del navegador.
+          </p>
+        </section>
+        <section v-else>
+          <p class="etiqueta">Contacto</p>
+          <h1>¿Qué te gustaría cocinar?</h1>
+          <p>Formulario de práctica: no envía ni almacena datos.</p>
+          <form class="formulario" @submit.prevent="validar">
+            <label
+              >Nombre<input
+                v-model.trim="nombre"
+                required
+                maxlength="80"
+                autocomplete="given-name" /></label
+            ><label
+              >Correo<input
+                v-model.trim="correo"
+                type="email"
+                required
+                autocomplete="email" /></label
+            ><label
+              >Mensaje<textarea
+                v-model.trim="mensaje"
+                required
+                minlength="10"
+                maxlength="1000"
+              ></textarea></label
+            ><button class="btn-cocina" type="submit">Validar mensaje</button>
+            <p role="status">{{ estado }}</p>
+          </form>
+        </section>
+      </main>
+      <footer>La cocina de Juan · SPA con Vue · Codo a Codo</footer>
+    </div>
+    <noscript>Esta práctica necesita JavaScript.</noscript>
+    <script src="../../../recursos/vendor/vue.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

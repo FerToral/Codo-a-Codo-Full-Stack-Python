@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La carta · La cocina de Juan</title>
+    <link rel="stylesheet" href="../../../recursos/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../recursos/cocina.css" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header id="cabecera"></header>
+    <main id="contenido">
+      <p class="etiqueta">TP08 y TP09 · Plantillas y objetos</p>
+      <section class="portada">
+        <div>
+          <h1>Comida simple. Buenos ingredientes.</h1>
+          <p class="bajada">
+            Una carta breve, con platos para cada día. Los productos se generan
+            desde un array de objetos.
+          </p>
+        </div>
+        <img src="../recursos/plato.svg" alt="Ilustración de un plato casero" />
+      </section>
+      <div class="filtros">
+        <label for="buscar"
+          >Buscar en la carta<input
+            id="buscar"
+            type="search"
+            placeholder="Por ejemplo, calabaza"
+        /></label>
+        <p id="cantidad" role="status"></p>
+      </div>
+      <div class="platos" id="productos"></div>
+      <noscript>Activá JavaScript para cargar la carta.</noscript>
+    </main>
+    <footer id="pie"></footer>
+    <script src="../../../recursos/vendor/jquery.min.js"></script>
+    <script src="../../../recursos/vendor/bootstrap.bundle.min.js"></script>
+    <script type="module" src="layout.js"></script>
+    <script type="module" src="catalogo.js"></script>
+  </body>
+</html>

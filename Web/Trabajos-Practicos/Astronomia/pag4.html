@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto · Órbita</title>
+    <link rel="stylesheet" href="astronomia.css" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="marca" href="index.html">Órbita <span>CaC · 2020</span></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pag0.html">Estrellas</a></li>
+          <li><a href="pag1.html">Astronomía</a></li>
+          <li><a href="pag2.html">Sistema solar</a></li>
+          <li><a href="pag3.html">Satélites</a></li>
+          <li>
+            <a href="pag4.html" class="active" aria-current="page">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="pantalla">
+      <div class="contenedor-pantalla">
+        <div class="text-contenedor">
+          <p class="antetitulo">Un recorrido por la astronomía</p>
+          <h1 class="tittle-pantalla">Sigamos mirando hacia arriba.</h1>
+          <p class="bajada">Un formulario para practicar, sin enviar datos.</p>
+        </div>
+        <svg
+          class="cielo"
+          viewBox="0 0 500 360"
+          role="img"
+          aria-labelledby="cielo-titulo"
+        >
+          <title id="cielo-titulo">
+            Diagrama decorativo de órbitas; no está a escala
+          </title>
+          <g fill="none" stroke="currentColor" opacity=".45">
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="215"
+              ry="90"
+              transform="rotate(-25 245 180)"
+            />
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="155"
+              ry="65"
+              transform="rotate(-25 245 180)"
+            />
+            <circle cx="245" cy="180" r="37" />
+          </g>
+          <circle cx="245" cy="180" r="22" fill="#e8bf6b" />
+          <circle cx="390" cy="80" r="11" fill="#7baecb" />
+          <circle cx="132" cy="202" r="7" fill="#d88763" />
+          <g fill="white">
+            <circle cx="30" cy="65" r="2" />
+            <circle cx="130" cy="55" r="2" />
+            <circle cx="415" cy="265" r="2" />
+            <circle cx="342" cy="330" r="2" />
+            <circle cx="59" cy="302" r="2" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="contenedor">
+      <main id="contenido" class="contenido">
+        <section class="formulario" aria-labelledby="titulo-contacto">
+          <h2 id="titulo-contacto">Contacto</h2>
+          <p>
+            Demostración local. No crea cuentas, envía mensajes ni guarda datos.
+          </p>
+          <form id="contacto" action="pag4.html" method="dialog">
+            <label for="nombre">Nombre</label
+            ><input
+              class="control"
+              id="nombre"
+              name="nombre"
+              autocomplete="given-name"
+              required
+              maxlength="100"
+            /><label for="correo">Correo electrónico</label
+            ><input
+              class="control"
+              id="correo"
+              name="correo"
+              type="email"
+              autocomplete="email"
+              required
+              maxlength="254"
+            /><label for="mensaje">¿Qué te gustaría explorar?</label
+            ><textarea
+              class="control"
+              id="mensaje"
+              name="mensaje"
+              required
+              minlength="10"
+              maxlength="2000"
+              rows="5"
+            ></textarea
+            ><button class="boton" type="submit">Probar formulario →</button>
+            <p id="estado-contacto" role="status" aria-live="polite"></p>
+            <noscript
+              >Esta demostración necesita JavaScript. No completes información
+              personal.</noscript
+            >
+          </form>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <h2>Seguimos aprendiendo</h2>
+        <p>
+          Esta página ensaya estructura y validación de formularios HTML. Ningún
+          dato se transmite a un servicio.
+        </p>
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>
+        Fernando Toralez · Práctica web de Codo a Codo, 2020 · Revisión 2026.
+      </p>
+      <p>
+        Textos y gráficos de esta revisión elaborados para el sitio.
+        <a href="README.md">Contexto y fuentes</a>.
+      </p>
+    </footer>
+    <script src="sitio.js" defer></script>
+  </body>
+</html>

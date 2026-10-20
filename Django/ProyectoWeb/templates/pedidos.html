@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}
+    Gestión{% endblock %}
+{% block content %}
+    <p class="etiqueta">Área de gestión</p>
+    <h1>Pedidos y clientes.</h1>
+    <div class="linea">
+        <a class="boton"
+           href="{% url 'pedido_nuevo' %}">Nuevo pedido</a>
+        <a href="{% url 'cliente_nuevo' %}">Agregar cliente</a>
+    </div>
+    <form method="get" class="buscar">
+        <label for="q">Buscar pedidos por cliente</label>
+        <div class="linea">
+            <input id="q" name="q" value="{{ consulta }}" maxlength="100">
+            <button>Buscar</button>{% if consulta %}
+            <a href="{% url 'pedidos' %}">Limpiar</a>{% endif %}
+    </div>
+</form>
+<div class="tabla">
+    <table>
+        <caption>Pedidos registrados</caption>
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pedido in pedidos %}
+                <tr>
+                    <td>{{ pedido.numero }}</td>
+                    <td>{{ pedido.cliente.nombre }}</td>
+                    <td>{{ pedido.fecha|date:'d/m/Y' }}</td>
+                    <td>
+                        {% if pedido.entregado %}
+                            Entregado{% else %}
+                            Pendiente{% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'pedido_editar' pedido.pk %}">Editar<span class="sr-only"> pedido {{ pedido.numero }}</span>
+                        </a> · <a href="{% url 'pedido_eliminar' pedido.pk %}">Eliminar<span class="sr-only"> pedido {{ pedido.numero }}</span>
+                        </a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No hay pedidos que mostrar.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<h2>Clientes</h2>
+<div class="tabla">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.nombre }}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>{{ cliente.edad }}</td>
+                    <td>
+                        <a href="{% url 'cliente_editar' cliente.pk %}">Editar<span class="sr-only"> {{ cliente.nombre }}</span>
+                        </a> · <a href="{% url 'cliente_eliminar' cliente.pk %}">Eliminar<span class="sr-only"> {{ cliente.nombre }}</span>
+                        </a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Agregá un cliente para comenzar.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

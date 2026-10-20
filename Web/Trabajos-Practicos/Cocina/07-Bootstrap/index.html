@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La cocina de Juan · Bootstrap</title>
+    <link rel="stylesheet" href="../../../recursos/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../recursos/cocina.css" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Principal">
+        <a class="navbar-brand" href="index.html">La cocina de Juan</a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Inicio</a
+            ><a class="nav-link" href="../08-09-DOM/nosotros.html">Nosotros</a
+            ><a class="nav-link" href="../08-09-DOM/contacto.html">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="contenido">
+      <p class="etiqueta">TP07 · Diseño adaptable</p>
+      <h1>Cocinar rico, todos los días.</h1>
+      <p class="bajada">
+        Recetas sencillas y productos de estación para compartir en casa.
+      </p>
+      <div class="tres-columnas">
+        <aside>
+          <h2>En la cocina</h2>
+          <p>
+            Elegir ingredientes frescos es un buen comienzo. Lavá las verduras y
+            prepará todos los utensilios antes de empezar.
+          </p>
+          <a href="../08-09-DOM/index.html">Ver la carta</a>
+        </aside>
+        <section aria-label="Recetas destacadas">
+          <div id="recetas" class="carousel slide" data-interval="false">
+            <ol class="carousel-indicators">
+              <li data-target="#recetas" data-slide-to="0" class="active"></li>
+              <li data-target="#recetas" data-slide-to="1"></li>
+              <li data-target="#recetas" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <article class="carousel-item active">
+                <img
+                  src="../recursos/plato.svg"
+                  alt="Plato de verduras con huevo y pan"
+                />
+                <h2>Sabores de estación</h2>
+                <p>Una ensalada lista en quince minutos.</p>
+              </article>
+              <article class="carousel-item">
+                <img
+                  src="../recursos/plato.svg"
+                  alt="Ingredientes de una comida casera"
+                />
+                <h2>Sin desperdiciar</h2>
+                <p>
+                  Un guiso permite aprovechar las verduras que quedan en la
+                  heladera.
+                </p>
+              </article>
+              <article class="carousel-item">
+                <img
+                  src="../recursos/plato.svg"
+                  alt="Comida servida en un plato"
+                />
+                <h2>Para compartir</h2>
+                <p>Cocinar en casa también es hacer una pausa.</p>
+              </article>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-target="#recetas"
+              data-slide="prev"
+              aria-label="Receta anterior"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span></button
+            ><button
+              class="carousel-control-next"
+              type="button"
+              data-target="#recetas"
+              data-slide="next"
+              aria-label="Receta siguiente"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+          </div>
+        </section>
+        <aside>
+          <h2>Un paso más</h2>
+          <p>
+            La siguiente práctica genera el menú y el pie de página desde
+            JavaScript y muestra un catálogo de productos.
+          </p>
+          <a href="../08-09-DOM/index.html">Continuar con DOM →</a>
+        </aside>
+      </div>
+    </main>
+    <footer>
+      La cocina de Juan · Prácticas de desarrollo web · Codo a Codo
+    </footer>
+    <script src="../../../recursos/vendor/jquery.min.js"></script>
+    <script src="../../../recursos/vendor/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

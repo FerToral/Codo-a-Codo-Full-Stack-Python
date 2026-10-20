@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+    Inicio{% endblock %}
+{% block content %}
+    <p class="etiqueta">Desarrollo Full Stack</p>
+    <h1>De una página a una aplicación.</h1>
+    <p class="bajada">Un recorrido por las vistas, las plantillas y los datos que dan forma a un sitio con Django.</p>
+    <div class="linea">
+        <a class="boton"
+           href="{% url 'servicios' %}">Explorar servicios</a>
+        <a href="{% url 'pedidos' %}">Abrir gestión de pedidos →</a>
+    </div>
+    <section class="lista">
+        <h2>Las partes de la aplicación</h2>
+        <article>
+            <span>01</span>
+            <div>
+                <h3>Contenido y presentación</h3>
+                <p>Servicios y publicaciones cargados desde el administrador, plantillas compartidas y archivos estáticos.</p>
+            </div>
+        </article>
+        <article>
+            <span>02</span>
+            <div>
+                <h3>Datos y relaciones</h3>
+                <p>Clientes, pedidos, autores y categorías. Cada modelo expresa una parte del dominio y sus relaciones.</p>
+            </div>
+        </article>
+        <article>
+            <span>03</span>
+            <div>
+                <h3>Formularios y operaciones</h3>
+                <p>Altas, edición y bajas con validación. El área de gestión requiere un usuario de administración.</p>
+            </div>
+        </article>
+    </section>
+{% endblock %}

@@ -1,19 +1,29 @@
-# POO: gestión de clientes de un banco
+# POO · Gestión de clientes de un banco
 
-Actividad opcional de Codo a Codo Full Stack Python: clases abstractas, herencia, polimorfismo, listas y métodos especiales. La [carpeta de material del curso](https://drive.google.com/drive/folders/1Fpgw944KMCjIpe4xY1KBQU8MWZISmCQ-) conserva la consigna **Actividad Opcional POO Banco** y sus ejemplos.
+Actividad de clases abstractas, herencia y polimorfismo. El programa administra una lista de clientes y permite operar con dos tipos de cuenta.
 
-Esta es una **propuesta nueva de resolución de 2026**, basada en esa consigna. No se presenta como entrega histórica ni como proyecto final del curso. Los ejemplos docentes originales se preservan por separado y no se copian como código propio.
+## Consigna
 
-```sh
+Definir una clase base de cliente y especializarla en clientes estándar y Gold. Representar nombre, identificador y saldo; implementar depósitos, extracciones y una presentación de cada cliente. El banco debe permitir altas y un listado que utilice el comportamiento de cada clase.
+
+La práctica agrega búsqueda, cambio de nombre y baja para recorrer el ciclo de gestión de la lista.
+
+## Ejecutar
+
+Desde la raíz del repositorio:
+
+```console
 python Python/06-poo/Banco/banco.py
 python -m unittest discover -s pruebas -v
 ```
 
-- `cliente.py`: base abstracta, clientes estándar y Gold, saldo consultable y operaciones.
-- `banco.py`: altas y listado polimórfico; extras de búsqueda, cambio de nombre y baja.
-- Datos ficticios, sólo en memoria. No se persisten identidades ni se conectan servicios.
-- Identificadores locales al banco, crecientes y no reutilizados. Los nombres pueden coincidir.
-- Para concretar el descubierto de Gold, el cliente estándar no admite saldo negativo y Gold permite bajar hasta el límite configurado; se explicita esta decisión porque la consigna enumera clases pero no detalla todas las reglas.
-- Importes didácticos positivos con hasta dos decimales, tratados con Decimal. Sin intereses, transferencias, concurrencia ni pretensión de software financiero real.
+## Diseño
 
-Ocho pruebas cubren abstracción, polimorfismo, operaciones válidas/erróneas, límites, identificadores, búsquedas, bajas, copia de la lista y ejecución de la demostración.
+- `cliente.py`: base abstracta y especializaciones estándar y Gold.
+- `banco.py`: colección de clientes y demostración de operaciones.
+- Los identificadores son locales, crecientes y no se reutilizan después de una baja.
+- El cliente estándar no puede quedar con saldo negativo; Gold permite descubierto hasta su límite configurado.
+- Los importes usan Decimal con hasta dos decimales. Los depósitos y extracciones deben ser positivos.
+- Los datos son ficticios y viven en memoria. La práctica no implementa transferencias, intereses ni persistencia.
+
+Las pruebas cubren operaciones válidas e inválidas, límites, polimorfismo, identificadores y gestión de la lista.
