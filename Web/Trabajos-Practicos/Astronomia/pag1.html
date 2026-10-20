@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Astronomía · Órbita</title>
+    <link rel="stylesheet" href="astronomia.css" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="marca" href="index.html">Órbita <span>CaC · 2020</span></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pag0.html">Estrellas</a></li>
+          <li>
+            <a href="pag1.html" class="active" aria-current="page"
+              >Astronomía</a
+            >
+          </li>
+          <li><a href="pag2.html">Sistema solar</a></li>
+          <li><a href="pag3.html">Satélites</a></li>
+          <li><a href="pag4.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="pantalla">
+      <div class="contenedor-pantalla">
+        <div class="text-contenedor">
+          <p class="antetitulo">Un recorrido por la astronomía</p>
+          <h1 class="tittle-pantalla">Aprender a preguntar al cielo.</h1>
+          <p class="bajada">Observar, registrar y volver a comparar.</p>
+        </div>
+        <svg
+          class="cielo"
+          viewBox="0 0 500 360"
+          role="img"
+          aria-labelledby="cielo-titulo"
+        >
+          <title id="cielo-titulo">
+            Diagrama decorativo de órbitas; no está a escala
+          </title>
+          <g fill="none" stroke="currentColor" opacity=".45">
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="215"
+              ry="90"
+              transform="rotate(-25 245 180)"
+            />
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="155"
+              ry="65"
+              transform="rotate(-25 245 180)"
+            />
+            <circle cx="245" cy="180" r="37" />
+          </g>
+          <circle cx="245" cy="180" r="22" fill="#e8bf6b" />
+          <circle cx="390" cy="80" r="11" fill="#7baecb" />
+          <circle cx="132" cy="202" r="7" fill="#d88763" />
+          <g fill="white">
+            <circle cx="30" cy="65" r="2" />
+            <circle cx="130" cy="55" r="2" />
+            <circle cx="415" cy="265" r="2" />
+            <circle cx="342" cy="330" r="2" />
+            <circle cx="59" cy="302" r="2" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="contenedor">
+      <main id="contenido" class="contenido">
+        <h2>Un cuaderno antes que una respuesta</h2>
+        <p>
+          Una observación útil puede empezar con datos sencillos: fecha, hora,
+          lugar aproximado y condiciones del cielo. Un dibujo ayuda a comparar
+          una noche con otra.
+        </p>
+        <h2>Tres pasos para una bitácora</h2>
+        <ol>
+          <li>
+            <strong>Describir:</strong> separá lo que viste de lo que creés que
+            es.
+          </li>
+          <li>
+            <strong>Comparar:</strong> buscá una fuente y registrá qué parte
+            confirma tu observación.
+          </li>
+          <li>
+            <strong>Revisar:</strong> si algo no coincide, conservá la duda y
+            repetí el registro.
+          </li>
+        </ol>
+        <p>
+          Este recorrido es una invitación de estudio, no un catálogo
+          exhaustivo. Los enlaces de las otras secciones permiten profundizar.
+        </p>
+      </main>
+      <aside class="sidebar">
+        <h2>Una pregunta para empezar</h2>
+        <p>
+          ¿El objeto cambió de posición respecto de los puntos de luz cercanos?
+        </p>
+        <p>
+          Escribí una hipótesis y qué observación te ayudaría a distinguirla de
+          otra.
+        </p>
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>
+        Fernando Toralez · Práctica web de Codo a Codo, 2020 · Revisión 2026.
+      </p>
+      <p>
+        Textos y gráficos de esta revisión elaborados para el sitio.
+        <a href="README.md">Contexto y fuentes</a>.
+      </p>
+    </footer>
+    <script src="sitio.js" defer></script>
+  </body>
+</html>

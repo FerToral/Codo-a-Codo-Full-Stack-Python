@@ -19,8 +19,95 @@ def cargar(nombre):
 
 
 f, c = cargar("funciones"), cargar("cadenas")
-with patch.dict(sys.modules, {"funciones": f}):
+fechas, numeros = cargar("fechas"), cargar("numeros")
+with patch.dict(sys.modules, {"fechas": fechas,"numeros": numeros}):
+    actividades = cargar("actividades")
+with patch.dict(sys.modules, {"funciones": f,"actividades": actividades}):
     consola = cargar("consola")
+
+
+class CalendarioYAcumuladoresU2(unittest.TestCase):
+    def test_calendario_y_bordes(self):
+        self.assertFalse(fechas.es_bisiesto(1900))
+        self.assertTrue(fechas.es_bisiesto(2000))
+        self.assertFalse(fechas.fecha_valida(29,2,2025))
+        self.assertTrue(fechas.fecha_valida(29,2,2024))
+        self.assertEqual(fechas.dias_hasta_fin_de_mes(28,2,2024),1)
+        self.assertEqual(fechas.dias_hasta_fin_de_anio(31,12,2025),0)
+        self.assertEqual(fechas.dias_transcurridos(1,1,2025),1)
+        self.assertEqual(fechas.tiempo_entre_fechas((31,1,2024),(29,2,2024)),(0,1,0))
+        self.assertEqual(fechas.tiempo_entre_fechas((1,3,2025),(29,2,2024)),(1,0,1))
+        self.assertEqual(fechas.dia_de_semana(3),"miércoles")
+        self.assertEqual(fechas.dia_de_semana(9),"martes")
+
+    def test_romanos_y_signos_de_la_guia(self):
+        for anio, esperado in [(751,"DCCLI"),(1999,"MCMXCIX"),(2158,"MMCLVIII")]:
+            self.assertEqual(fechas.romano(anio),esperado)
+        self.assertEqual(fechas.signo(20,2),"Acuario")
+        self.assertEqual(fechas.signo(21,2),"Piscis")
+        self.assertEqual(fechas.signo(21,12),"Capricornio")
+        for accion in (lambda: fechas.romano(4000),lambda: fechas.signo(31,4)):
+            with self.assertRaises(ValueError):
+                accion()
+
+    def test_divisores_perfectos_amigos(self):
+        self.assertEqual(numeros.factores_primos(360),[2,2,2,3,3,5])
+        self.assertEqual(numeros.factores_primos(1),[])
+        self.assertEqual(numeros.suma_divisores(36),55)
+        self.assertEqual(numeros.perfectos(3),[6,28,496])
+        self.assertEqual(numeros.amigos(2),[(220,284),(1184,1210)])
+        self.assertEqual(numeros.perfectos(0),[])
+
+    def test_multiplos_primos_y_digitos(self):
+        for base in range(1,10):
+            for limite in range(30):
+                self.assertEqual(numeros.multiplos_for(base,limite),numeros.multiplos_while(base,limite))
+        self.assertEqual(numeros.multiplos_while(3,9),2)
+        self.assertEqual(numeros.primos_hasta(11),[2,3,5,7,11])
+        self.assertTrue(numeros.contiene_digito(0,0))
+        self.assertFalse(numeros.contiene_digito(1,0))
+        self.assertTrue(numeros.contiene_digito(4,12345))
+
+    def test_resumen_y_examenes(self):
+        self.assertEqual(numeros.resumen_naturales([]),(0,0,None))
+        self.assertEqual(numeros.resumen_naturales([0,2,4]),(3,6,2))
+        self.assertEqual(numeros.evaluar_examen(10,60,6),(60,True))
+        self.assertEqual(numeros.evaluar_examen(10,60,5),(50,False))
+        for accion in (lambda: numeros.promedio([]),lambda: numeros.evaluar_examen(0,60,0),
+                       lambda: numeros.evaluar_examen(10,float("nan"),0)):
+            with self.assertRaises(ValueError):
+                accion()
+
+    def test_clave_limite_y_espera_sin_dormir(self):
+        entradas=iter(["no","tampoco","ejemplo"])
+        pausas=[]
+        self.assertTrue(actividades.verificar_clave("ejemplo",3,2,lambda _:next(entradas),pausas.append))
+        self.assertEqual(pausas,[2,4])
+        self.assertFalse(actividades.verificar_clave("ejemplo",2,entrada=lambda _:"no"))
+        self.assertTrue(actividades.verificar_clave("ejemplo",entrada=lambda _:"ejemplo"))
+
+    def test_recorridos_de_consola_17_a_29(self):
+        casos = {
+            "fechas":(["1","1","2024","1","1","2025"],"1 0 0"),
+            "semana":(["3"],"miércoles"),"romano":(["1999"],"MCMXCIX"),
+            "signo":(["21","2"],"Piscis"),"promedio":(["4","s","6","n"],"5.0"),
+            "factores":(["12"],"2 2 3"),"clave":(["clave-de-ejemplo"],"True"),
+            "perfectos":(["2"],"6 28"),"amigos":(["1"],"(220, 284)"),
+            "sucesion":(["2","4","-1"],"Promedio: 3.0"),
+            "multiplos":(["3","9"],"for: 2 while: 2"),"primos":(["7"],"2 3 5 7"),
+            "digito":(["4","12345"],"True"),"examenes":(["10","60","6","5","-1"],"Desaprobado"),
+        }
+        for actividad,(datos,esperado) in casos.items():
+            with self.subTest(actividad=actividad):
+                entradas=iter(datos); salida=[]
+                consola.ejecutar(actividad,lambda _:next(entradas),lambda *args:salida.append(" ".join(map(str,args))))
+                self.assertIn(esperado,"\n".join(salida))
+
+    def test_cli_real_del_bloque_nuevo(self):
+        proceso = subprocess.run([sys.executable,"-B",str(GUIA/"consola.py"),"romano"],
+                                 input="1999\n",text=True,capture_output=True,timeout=5)
+        self.assertEqual(proceso.returncode,0,proceso.stderr)
+        self.assertIn("MCMXCIX",proceso.stdout)
 
 
 class FuncionesU2(unittest.TestCase):

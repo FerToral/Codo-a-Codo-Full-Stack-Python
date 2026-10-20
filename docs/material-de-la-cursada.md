@@ -28,6 +28,12 @@ El cronograma de la carpeta compartida corresponde a agosto–diciembre de 2020.
 
 Estas relaciones son por tema. No se ha comprobado que una práctica personal sea respuesta a un enunciado determinado de U1/U2.
 
+Las resoluciones nuevas se organizan por guía: U1 tiene 24 consignas
+utilizables y una alternativa explícita para el dibujo ausente del 25;
+el número 19 no aparece en el PDF. U2 cubre 1–36 y los apartados finales
+6.8–6.9. Se mantienen separadas de las respuestas personales históricas.
+El ejercicio U1/22 tiene versiones de terminal y navegador enlazadas.
+
 El [directorio de trabajos prácticos](https://drive.google.com/drive/folders/1RMFTMV784Pxqetnil2hfbt0Me82LITJr) reúne los enunciados. Los ejemplos, libros, presentaciones y soluciones docentes permanecen en ese material y en su respaldo, conservando su contexto y autoría.
 
 ## Bases de datos y Django

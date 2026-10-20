@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicio · Órbita</title>
+    <link rel="stylesheet" href="astronomia.css" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav aria-label="Navegación principal">
+        <a class="marca" href="index.html">Órbita <span>CaC · 2020</span></a>
+        <ul>
+          <li>
+            <a href="index.html" class="active" aria-current="page">Inicio</a>
+          </li>
+          <li><a href="pag0.html">Estrellas</a></li>
+          <li><a href="pag1.html">Astronomía</a></li>
+          <li><a href="pag2.html">Sistema solar</a></li>
+          <li><a href="pag3.html">Satélites</a></li>
+          <li><a href="pag4.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="pantalla">
+      <div class="contenedor-pantalla">
+        <div class="text-contenedor">
+          <p class="antetitulo">Un recorrido por la astronomía</p>
+          <h1 class="tittle-pantalla">Mirar más lejos.</h1>
+          <p class="bajada">
+            Un pequeño recorrido para hacerse grandes preguntas.
+          </p>
+        </div>
+        <svg
+          class="cielo"
+          viewBox="0 0 500 360"
+          role="img"
+          aria-labelledby="cielo-titulo"
+        >
+          <title id="cielo-titulo">
+            Diagrama decorativo de órbitas; no está a escala
+          </title>
+          <g fill="none" stroke="currentColor" opacity=".45">
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="215"
+              ry="90"
+              transform="rotate(-25 245 180)"
+            />
+            <ellipse
+              cx="245"
+              cy="180"
+              rx="155"
+              ry="65"
+              transform="rotate(-25 245 180)"
+            />
+            <circle cx="245" cy="180" r="37" />
+          </g>
+          <circle cx="245" cy="180" r="22" fill="#e8bf6b" />
+          <circle cx="390" cy="80" r="11" fill="#7baecb" />
+          <circle cx="132" cy="202" r="7" fill="#d88763" />
+          <g fill="white">
+            <circle cx="30" cy="65" r="2" />
+            <circle cx="130" cy="55" r="2" />
+            <circle cx="415" cy="265" r="2" />
+            <circle cx="342" cy="330" r="2" />
+            <circle cx="59" cy="302" r="2" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="contenedor">
+      <main id="contenido" class="contenido">
+        <h2>Una curiosidad que empieza acá</h2>
+        <p>
+          No hace falta conocer todas las constelaciones para empezar a mirar el
+          cielo. Este sitio propone un recorrido breve: reconocer una estrella,
+          situar nuestro planeta y distinguir los objetos que lo acompañan.
+        </p>
+        <p>
+          La astronomía fue el tema elegido para practicar enlaces, listas,
+          tablas y formularios en HTML y CSS. Hoy conserva ese recorrido, con
+          textos propios y gráficos dibujados en código.
+        </p>
+        <ol class="recorrido">
+          <li>
+            <a href="pag0.html">Encontrar una estrella</a
+            ><span>De la luz que vemos a su origen.</span>
+          </li>
+          <li>
+            <a href="pag2.html">Ubicarnos en el sistema solar</a
+            ><span>Ocho planetas, una estrella.</span>
+          </li>
+          <li>
+            <a href="pag3.html">Conocer nuestros acompañantes</a
+            ><span>Lunas y satélites artificiales.</span>
+          </li>
+        </ol>
+      </main>
+      <aside class="sidebar">
+        <h2>Bitácora de una práctica</h2>
+        <p>Fernando Toralez · CaC · 2020</p>
+        <p>
+          Entrega histórica identificada como TP N.º 2. La presentación actual
+          es una revisión de 2026; no es un proyecto final Django.
+        </p>
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>
+        Fernando Toralez · Práctica web de Codo a Codo, 2020 · Revisión 2026.
+      </p>
+      <p>
+        Textos y gráficos de esta revisión elaborados para el sitio.
+        <a href="README.md">Contexto y fuentes</a>.
+      </p>
+    </footer>
+    <script src="sitio.js" defer></script>
+  </body>
+</html>

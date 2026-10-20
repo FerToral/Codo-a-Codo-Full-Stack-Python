@@ -1,18 +1,28 @@
 # Codo a Codo — Full Stack Python
 
-Ejercicios de Python de la formación Full Stack de Codo a Codo: funciones, colecciones, condicionales, bucles, generadores y excepciones.
+Prácticas de la formación Full Stack de Codo a Codo: fundamentos de Python,
+guías de ejercicios y una entrega web de astronomía con HTML/CSS.
+
+## Prácticas web
+
+- [Astronomía](Web/Trabajos-Practicos/Astronomia/): seis páginas, listas,
+  tablas y formulario local. Se conserva la identidad histórica TP N.º 2;
+  no se afirma que sea el final Django ni que equivalga al integrador TP06.
+- [Letra del DNI](Web/Practicas/Letra-DNI/): versión de navegador de U1/22.
+  El cálculo corresponde al documento español, no al DNI argentino.
 
 ## Recorrido de Python
 
 | Módulo | Contenido | Ejercicios |
 | --- | --- | ---: |
+| [Ejercicios adicionales U1](Python/00-guia-practica-u1) | Entrada/salida, decisiones y ciclos | 24 consignas utilizables; 25 con alternativa explícita para un dibujo ausente |
 | [Funciones](Python/01-funciones) | Parámetros y valores de retorno | 1 |
 | [Colecciones](Python/02-colecciones) | Listas, tuplas, diccionarios y captura de datos | 4 |
 | [Condicionales](Python/03-condicionales) | Evaluación, selección, máximo, calculadora y media | 6 |
 | [Bucles y generadores](Python/04-bucles-y-generadores) | Acumulación, búsqueda y `yield` | 3 |
 | [Excepciones](Python/05-excepciones) | Raíz cuadrada y entradas inválidas | 1 |
 | [Programación orientada a objetos](Python/06-poo/Banco) | Clases abstractas, herencia, polimorfismo y gestión de clientes | 1 actividad integradora |
-| [Guía práctica U2](Python/07-guia-practica-u2) | Funciones, secuencias, consola y cadenas | 25 ejercicios principales de la guía; propuestas nuevas |
+| [Guía práctica U2](Python/07-guia-practica-u2) | Funciones, fechas, números, consola y cadenas | 38 consignas principales con subapartados; propuestas nuevas |
 
 Cada archivo es una práctica independiente. Algunos conservan comentarios y variantes del momento de aprendizaje. Las versiones anteriores se conservan en el respaldo histórico; la correspondencia de nombres está en [procedencia](docs/procedencia.md).
 
@@ -33,7 +43,11 @@ Los ejemplos de máximo, calculadora, media y raíz tienen funciones reutilizabl
 
 ## La formación Full Stack
 
-El material relacionado abarca HTML/CSS, Bootstrap, JavaScript, Vue, bases de datos, Python y Django. El [índice del material](docs/material-de-la-cursada.md) mantiene los enlaces entre ejercicios y contenidos. Este conjunto de prácticas cubre Python; los proyectos web y de bases de datos tienen que identificarse por sus propias entregas.
+El material relacionado abarca HTML/CSS, Bootstrap, JavaScript, Vue, bases
+de datos, Python y Django. El [índice del material](docs/material-de-la-cursada.md)
+mantiene los enlaces entre ejercicios y contenidos. Esta colección cubre
+las guías Python y la entrega web identificada; no se presenta como todas
+las prácticas de SQL/Django ni como recuperación del final personal.
 
 Los scripts pertenecen a Codo a Codo según la identificación de su autor. Sus fechas históricas de marzo de 2020 preceden al cronograma agosto–diciembre de 2020 de la carpeta compartida: la edición y las clases exactas de estas prácticas siguen pendientes de correlación documental. No se atribuye una clase concreta basándose únicamente en la similitud de temas.
 

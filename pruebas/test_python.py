@@ -107,9 +107,12 @@ class EjecucionDeConsola(unittest.TestCase):
         archivos = {archivo.relative_to(PYTHON).as_posix() for archivo in PYTHON.rglob("*.py")}
         # POO y U2 tienen baterías propias; el inventario sigue siendo explícito.
         adicionales = {
+            "00-guia-practica-u1/ejercicios.py",
             "06-poo/Banco/banco.py", "06-poo/Banco/cliente.py",
             "07-guia-practica-u2/funciones.py", "07-guia-practica-u2/cadenas.py",
             "07-guia-practica-u2/consola.py",
+            "07-guia-practica-u2/fechas.py", "07-guia-practica-u2/numeros.py",
+            "07-guia-practica-u2/actividades.py",
         }
         self.assertEqual(archivos, set(casos) | adicionales)
         for archivo, (entrada, esperado) in casos.items():

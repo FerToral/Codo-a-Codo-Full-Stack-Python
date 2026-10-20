@@ -1,5 +1,6 @@
 """Ejecutables de los ejercicios U2 2, 4, 6, 7, 9–16."""
 import argparse
+from actividades import ACTIVIDADES, ejecutar as ejecutar_actividad
 from funciones import (
     producto, operaciones, tabla, repetir_palabra, pares_entre, triangulares,
     factoriales, domino, sumar_intervalos, identidad,
@@ -49,6 +50,8 @@ def ejecutar(actividad, entrada=input, salida=print):
     elif actividad == "identidad":
         for fila in identidad(int(entrada("Dimensión: "))):
             salida(*fila)
+    elif actividad in ACTIVIDADES:
+        ejecutar_actividad(actividad,entrada,salida)
     else:
         raise ValueError("Actividad desconocida")
 
@@ -58,7 +61,7 @@ def main():
     parser.add_argument("actividad", choices=(
         "producto","bloques","operaciones","tabla","palabra","pares","triangulares",
         "factoriales","domino","domino-n","intervalos","identidad",
-    ))
+    ) + ACTIVIDADES)
     args = parser.parse_args()
     try:
         ejecutar(args.actividad)
