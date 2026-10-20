@@ -28,8 +28,23 @@ El ZIP personal conserva un README que lo llama segundo TP y un pie de
 2020. Su alcance (seis páginas, CSS, tablas, iframes y formulario) es
 mayor que el contenido textual del TP02 compartido. La coincidencia del
 número no basta para identificar la consigna: puede corresponder a otra
-etapa o numeración. Su copia de mantenimiento sigue local mientras se
-verifican atribuciones y correspondencia de entrega.
+etapa o numeración. La [versión de mantenimiento](../Web/Trabajos-Practicos/Astronomia/)
+ya está publicada en la rama de revisión: conserva las seis páginas y
+sustituye textos extensos y fotos sin derechos acreditados por contenido
+y diagramas propios. Los originales y los PDF siguen en el respaldo
+privado. Esto cierra la recuperación de ese sitio, no todos los TPs web.
+
+## Estado de las prácticas
+
+| Bloque | Qué está disponible | Qué no se da por resuelto |
+|---|---|---|
+| TP01–TP06, HTML/CSS | Consignas enlazadas y sitio personal de seis páginas revisado | Equivalencia exacta entre la numeración personal TP2 y estas entregas |
+| TP07, Bootstrap | Consigna y ejemplos docentes respaldados | Adaptación personal restaurada y verificada |
+| TP08–TP09, DOM y objetos | Consignas y ejemplos docentes; U1/22 es otra práctica, no una solución de estos TPs | Entregas propias o propuestas nuevas de encabezado/pie y productos |
+| TP10–TP11, Vue/SPA | Consignas y ejemplos docentes identificados | Solución personal o propuesta nueva del sitio Vue/SPA |
+
+No se copian ejemplos docentes como entregas de Fernando. Las propuestas
+nuevas futuras deben conservar su consigna y distinguirse de la historia.
 
 ## Cierre de cursada
 
