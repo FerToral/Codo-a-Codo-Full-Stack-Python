@@ -32,6 +32,10 @@ El [directorio de trabajos prácticos](https://drive.google.com/drive/folders/1R
 
 ## Bases de datos y Django
 
+El [mapa de TP01–TP11](trabajos-practicos-web.md) relaciona las consignas
+web con la evolución del sitio y diferencia ejemplos docentes de entregas
+personales.
+
 El material recuperado documenta MySQL: incluye `Instalación de MySQL.pdf`, guías MySQL, seis archivos SQL y ejemplos con `USE`. El recuerdo del autor sobre PostgreSQL queda como pista para buscar otra carpeta o entrega; todavía no hay evidencia suficiente para asignar a PostgreSQL estos archivos.
 
 La presencia de `manage.py`, modelos y migraciones en los proyectos de Material de clase permite estudiar Django, pero no demuestra la recuperación de un proyecto final personal. La restauración de una entrega web requiere identificar su repositorio o carpeta de trabajo antes de combinarla con estos ejercicios.
