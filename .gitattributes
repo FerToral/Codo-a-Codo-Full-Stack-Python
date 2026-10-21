@@ -11,3 +11,6 @@
 *.svg text eol=lf
 *.txt text eol=lf
 *.pdf binary
+*.ttf binary
+*.woff2 binary
+Web/recursos/fuentes/OFL-Lora.txt -whitespace

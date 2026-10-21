@@ -7,6 +7,8 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=80)
     email = models.EmailField(unique=True)
     edad = models.PositiveSmallIntegerField(validators=[MaxValueValidator(120)])
+    direccion = models.CharField(max_length=150, blank=True)
+    telefono = models.CharField(max_length=30, blank=True)
 
     class Meta:
         ordering = ["nombre", "pk"]
@@ -40,6 +42,18 @@ class Pedido(models.Model):
         return f"Pedido {self.numero}"
 
 
+class Articulo(models.Model):
+    nombre = models.CharField(max_length=80)
+    seccion = models.CharField(max_length=60)
+    precio = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ["nombre", "pk"]
+
+    def __str__(self):
+        return f"{self.nombre} · {self.seccion} · {self.precio}"
+
+
 class Servicio(models.Model):
     titulo = models.CharField(max_length=100)
     contenido = models.TextField()
@@ -71,7 +85,7 @@ class Post(models.Model):
     contenido = models.TextField()
     imagen = models.ImageField(upload_to="blog/", blank=True)
     autor = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="publicaciones"
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="publicaciones"
     )
     categorias = models.ManyToManyField(Categoria, related_name="publicaciones")
     creado = models.DateTimeField(auto_now_add=True)

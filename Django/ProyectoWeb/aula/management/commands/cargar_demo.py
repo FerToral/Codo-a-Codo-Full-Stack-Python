@@ -2,7 +2,7 @@ from datetime import date
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from aula.models import Cliente, Pedido, Servicio, Categoria, Post
+from aula.models import Cliente, Pedido, Servicio, Categoria, Post, Articulo
 
 
 class Command(BaseCommand):
@@ -16,6 +16,14 @@ class Command(BaseCommand):
         Pedido.objects.get_or_create(
             numero=1001, defaults={"cliente": cliente, "fecha": date(2020, 11, 20)}
         )
+        for nombre, seccion, precio in [
+            ("Cuaderno de recetas", "Papelería", 120),
+            ("Tabla de madera", "Cocina", 500),
+            ("Delantal", "Cocina", 350),
+        ]:
+            Articulo.objects.get_or_create(
+                nombre=nombre, defaults={"seccion": seccion, "precio": precio}
+            )
         for titulo, contenido in [
             (
                 "Diseño web",

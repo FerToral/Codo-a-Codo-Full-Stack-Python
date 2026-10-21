@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Cliente, Pedido, Servicio, Categoria, Post
+from .models import Cliente, Pedido, Servicio, Categoria, Post, Articulo
+
+
+@admin.register(Articulo)
+class ArticuloAdmin(admin.ModelAdmin):
+    list_display = ["nombre", "seccion", "precio"]
+    search_fields = ["nombre", "seccion"]
+    list_filter = ["seccion"]
 
 
 @admin.register(Cliente)

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sucursales · La cocina de Juan</title>
+    <link
+      rel="stylesheet"
+      href="../../../recursos/vendor/fontawesome/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../recursos/vendor/fontawesome/css/solid.min.css"
+    />
+    <link rel="stylesheet" href="cocina.css" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <a class="marca" href="index.html"
+        ><i class="fa-solid fa-carrot" aria-hidden="true"></i> La cocina de
+        Juan</a
+      >
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="receta.html">La receta</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="sucursales.html" aria-current="page">Sucursales</a></li>
+          <li><a href="clientes.html">Clientes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="contenido">
+      <header class="titulo">
+        <p class="ceja">Ubicaciones de ejemplo</p>
+        <h1>Un lugar en cada barrio.</h1>
+        <p>
+          Maqueta didáctica: estas sedes son ficticias y no reciben reservas.
+        </p>
+      </header>
+      <div class="dos ubicaciones">
+        <section>
+          <h2>Elegí una sede</h2>
+          <ul>
+            <li>
+              <a href="ubicaciones.html#huerta" target="mapa-sedes"
+                >La Huerta</a
+              >
+              · Zona norte
+            </li>
+            <li>
+              <a href="ubicaciones.html#mercado" target="mapa-sedes"
+                >El Mercado</a
+              >
+              · Zona central
+            </li>
+            <li>
+              <a href="ubicaciones.html#taller" target="mapa-sedes"
+                >El Taller</a
+              >
+              · Zona sur
+            </li>
+          </ul>
+          <p>
+            Los enlaces actualizan el documento dentro del iframe. La ficha
+            también puede
+            <a href="ubicaciones.html">abrirse como página independiente</a>.
+          </p>
+        </section>
+        <iframe
+          name="mapa-sedes"
+          src="ubicaciones.html"
+          title="Plano esquemático de las sedes ficticias"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </main>
+    <footer>
+      <p>La cocina de Juan · Prácticas HTML y CSS · Codo a Codo</p>
+      <p>
+        <a href="README.md">Consignas y recorrido</a> ·
+        <a href="../../../..//CREDITOS.md">Créditos</a>
+      </p>
+    </footer>
+  </body>
+</html>

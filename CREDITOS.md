@@ -2,7 +2,7 @@
 
 ## Cursada
 
-Los TP07–TP11 de Cocina, las actividades JavaScript y SQL y ProyectoWeb Django son resoluciones nuevas de 2026 sobre las consignas de clase, junto a las prácticas personales históricas.
+Los TP01–TP11 de Cocina, las actividades JavaScript y SQL y ProyectoWeb Django son resoluciones nuevas de 2026 sobre las consignas de clase, junto a las prácticas personales históricas.
 
 Prácticas de Fernando Toralez de Codo a Codo, Full Stack Python, junto con resoluciones y mejoras posteriores. Las actividades web siguen los TP01–TP11 del material compartido; JavaScript, SQL, Python y Django mantienen sus módulos y consignas. El detalle del archivo histórico y la correspondencia de versiones se conservan en el registro de procedencia.
 
@@ -28,6 +28,12 @@ Los archivos se incluyen en `Web/recursos/vendor`, con sus avisos y licencias or
 | Popper (bundle Bootstrap) | 1.16.1  | MIT · `LICENSE-popper.md`     |
 
 Bootstrap y Vue conservan la API usada en el curso. Vue 2 terminó su soporte: estos ejercicios sirven para estudiar esa versión, no como base recomendada para un nuevo producto en producción. El bundle de Bootstrap conserva también sus avisos de terceros, incluido Popper.
+
+## Fuentes e iconos locales
+
+Font Awesome Free6.7.2 de Fonticons,Inc.: CSSbajoMIT yfuentes bajoSILOFL1.1. Se conserva LICENSE.txt en Web/recursos/vendor/fontawesome, con los avisos originales. Fuente: https://github.com/FortAwesome/Font-Awesome/tree/6.7.2 .
+
+Lora, The Lora Project Authors: SILOpenFontLicense1.1, archivo OFL-Lora.txt junto aLora.ttf. Copia de google/fonts, commit186331d77cc99caaa9c3b52391fd2b519c9e1ee8, carpetaofl/lora. La fuente no se modifica ni se vende por separado.
 
 ## Django
 

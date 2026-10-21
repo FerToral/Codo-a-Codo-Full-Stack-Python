@@ -1,6 +1,6 @@
 # Proyecto web con Django
 
-Práctica de vistas, plantillas, ORM, formularios y administración. La aplicación reúne los ejemplos de saludo y fecha, la gestión de clientes y pedidos, y un sitio con servicios y blog.
+Proyecto integrador del recorrido Django: vistas, plantillas, ORM, formularios y administración. Reúne fundamentos, gestión de clientes/pedidos, catálogo de artículos, contacto, servicios yblog. Es un desarrollo posterior sobre las actividades del curso, no una entrega histórica recuperada.
 
 ## Poner en marcha
 
@@ -23,13 +23,31 @@ En Linux/macOS, activar con `source .venv/bin/activate`. Abrir `http://127.0.0.1
 | Ruta | Conceptos |
 | --- | --- |
 | `/fundamentos/saludo/` y `/fundamentos/fecha/` | URL, vista y respuesta HTTP |
+| `/fundamentos/edades/60/2029/` | Parámetros por URL; ejemplo con año base2020 |
 | `/fundamentos/plantilla/` | Contexto, variables, condiciones y ciclos |
 | `/servicios/` | Consulta del ORM, imágenes y herencia de plantillas |
 | `/blog/` | Autor, categorías, relación muchos a muchos y filtros |
+| `/tienda/?prd=tabla` | Artículos y búsquedaORM con límite de20caracteres |
+| `/contacto/` | FormsAPI, validaciónPOST, cleaned_data yCSRF; sin correo externo |
 | `/pedidos/` | Clientes, pedidos, formularios y operaciones de gestión |
 | `/admin/` | Administración, búsqueda y carga de contenidos |
 
 Las [actividades](ACTIVIDADES.md) siguen la secuencia de los ejemplos de Django del curso. SQLite permite comenzar sin configurar un servidor de base de datos; las prácticas de SQL están en el módulo correspondiente del repositorio.
+
+## PostgreSQL
+
+La clase38–39 incluye PostgreSQL en las páginas15–16. SQLite permite comenzar; para usar el otro motor instalar `requirements-postgresql.txt` ydefinir en el entorno:
+
+```text
+DJANGO_DB_ENGINE=postgresql
+PGDATABASE=nombre_de_base
+PGUSER=usuario_local
+PGPASSWORD=contraseña_fuera_del_repositorio
+PGHOST=127.0.0.1
+PGPORT=5432
+```
+
+Crear una base vacía propia yaplicar `python manage.py migrate`. No se incluyen contraseñas ni se reutiliza una base anterior. El adaptadorpsycopg está disponible para esta configuración; la verificación funcional deeste bloque se hizo conSQLite. No se declara una pruebaPostgreSQLsinservidor.
 
 ## Archivos principales
 

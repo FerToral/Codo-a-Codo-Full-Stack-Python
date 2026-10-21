@@ -7,8 +7,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
-from .forms import ClienteForm, PedidoForm
-from .models import Cliente, Pedido, Servicio, Post, Categoria
+from .forms import ClienteForm, PedidoForm, ContactoForm
+from .models import Cliente, Pedido, Servicio, Post, Categoria, Articulo
 
 
 def inicio(request):
@@ -35,6 +35,38 @@ def plantilla(request):
     return render(
         request, "fundamentos.html", {"persona": persona, "hoy": date.today()}
     )
+
+
+def edad(request, edad, anio):
+    resultado = edad + anio - 2020
+    if resultado < 0:
+        return HttpResponse("La edad calculada no puede ser negativa.", status=400)
+    return HttpResponse(f"En el año {anio} tendrás {resultado} años.")
+
+
+def tienda(request):
+    consulta = request.GET.get("prd", "").strip()
+    error = ""
+    articulos = Articulo.objects.all()
+    if len(consulta) > 20:
+        error = "El texto de búsqueda admite hasta veinte caracteres."
+        articulos = Articulo.objects.none()
+    elif consulta:
+        articulos = articulos.filter(nombre__icontains=consulta)
+    return render(
+        request,
+        "tienda.html",
+        {"articulos": articulos, "consulta": consulta, "error": error},
+    )
+
+
+@require_http_methods(["GET", "POST"])
+def contacto(request):
+    form = ContactoForm(request.POST if request.method == "POST" else None)
+    if request.method == "POST" and form.is_valid():
+        # El ejercicio valida POST/cleaned_data; no pide enviar correo.
+        return render(request, "gracias.html", {"asunto": form.cleaned_data["asunto"]})
+    return render(request, "contacto.html", {"form": form})
 
 
 def servicios(request):
