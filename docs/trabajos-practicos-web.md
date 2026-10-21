@@ -1,24 +1,22 @@
 # Recorrido de trabajos prácticos web
 
-Las actividades avanzan desde HTML y CSS hasta un sitio reactivo. La temática de **La cocina de Juan** permite comparar cómo cambia una página al incorporar herramientas.
+La cocina de Juan permite seguir una misma temática desde HTML hasta Vue. Cada bloque tiene código, recursos y consignas dentro del repositorio.
 
-| TP    | Contenido                                                  | Dónde trabajar                                                              |
-| ----- | ---------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 01–03 | Estructura, tablas, listas, enlaces, iframes y formularios | [Práctica HTML/CSS: Órbita](../Web/Trabajos-Practicos/Astronomia/)          |
-| 04–06 | Estilos, adaptación de pantalla e integración              | [Órbita](../Web/Trabajos-Practicos/Astronomia/)                             |
-| 07    | Bootstrap, menú colapsable, carrusel y columnas            | [Cocina · Bootstrap](../Web/Trabajos-Practicos/Cocina/07-Bootstrap/)        |
-| 08    | Cabecera y pie compartidos                                 | [Cocina · DOM](../Web/Trabajos-Practicos/Cocina/08-09-DOM/)                 |
-| 09    | Catálogo desde objetos                                     | [Cocina · Catálogo](../Web/Trabajos-Practicos/Cocina/08-09-DOM/catalogo.js) |
-| 10    | Incorporar Vue a una página                                | [Cocina · Vue](../Web/Trabajos-Practicos/Cocina/10-Vue/)                    |
-| 11    | Sitio de una sola página                                   | [Cocina · SPA](../Web/Trabajos-Practicos/Cocina/11-SPA/)                    |
+| TP    | Contenido                                            | Dónde trabajar                                                 |
+| ----- | ---------------------------------------------------- | -------------------------------------------------------------- |
+| 01–03 | Páginas, tablas, listas, iconos, iframe y formulario | [HTML y CSS](../Web/Trabajos-Practicos/Cocina/01-06-HTML-CSS/) |
+| 04–06 | Estilos del sitio, galería adaptable e integración   | [HTML y CSS](../Web/Trabajos-Practicos/Cocina/01-06-HTML-CSS/) |
+| 07    | Bootstrap, menú colapsable, carrusel y columnas      | [Bootstrap](../Web/Trabajos-Practicos/Cocina/07-Bootstrap/)    |
+| 08–09 | Cabecera y pie compartidos, catálogo desde objetos   | [DOM](../Web/Trabajos-Practicos/Cocina/08-09-DOM/)             |
+| 10    | Datos reactivos y filtros                            | [Vue](../Web/Trabajos-Practicos/Cocina/10-Vue/)                |
+| 11    | Navegación y estado en una sola página               | [SPA](../Web/Trabajos-Practicos/Cocina/11-SPA/)                |
 
-Las [consignas de Cocina](../Web/Trabajos-Practicos/Cocina/CONSIGNAS.md) acompañan cada etapa desde Bootstrap. Órbita es una entrega personal identificada como TP N.º 2; se relaciona aquí por sus contenidos de HTML/CSS, no como equivalencia de numeración con los TP01–06 del material compartido.
+Las consignas de [HTML/CSS](../Web/Trabajos-Practicos/Cocina/01-06-HTML-CSS/README.md) y [Bootstrap a Vue](../Web/Trabajos-Practicos/Cocina/CONSIGNAS.md) explican cada etapa. El TP06 pide al menos cinco páginas, semántica HTML5, formulario, iframe, FontAwesome, fuente local o Google Fonts, tres puntos de corte, movimiento y Flexbox/Grid: el bloque HTML/CSS reúne esos requisitos.
+
+[Órbita](../Web/Trabajos-Practicos/Astronomia/) conserva su identidad de entrega personal TP N.º 2. Ese nombre no demuestra equivalencia con la numeración del material docente.
 
 ## Del documento al estado
 
-- En HTML/CSS, cada documento contiene la presentación de una página.
-- Con DOM, JavaScript inserta los elementos compartidos y genera el catálogo.
-- Con Vue, los datos y los filtros determinan lo que se muestra.
-- En la SPA, la navegación cambia la sección sin cargar otro documento.
+HTML/CSS presenta páginas independientes. JavaScript genera elementos compartidos y el catálogo. Vue relaciona los datos con los filtros; la SPA cambia de sección sin recargar el documento.
 
-El servidor local indicado en los README sirve todas las etapas sin instalar dependencias. [JavaScript](../JavaScript/) amplía lógica y eventos. Los siguientes bloques trabajan datos y servidor con [SQL](../Bases-de-Datos/) y [Django](../Django/ProyectoWeb/).
+El siguiente tramo conecta [SQL](../Bases-de-Datos/) y [Django](../Django/ProyectoWeb/). El [cronograma](cronograma-y-cobertura.md) sitúa esos contenidos en la cursada.

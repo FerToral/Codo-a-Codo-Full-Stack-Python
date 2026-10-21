@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Tienda{% endblock %}
+{% block content %}
+<p class="etiqueta">Artículos y consultas ORM</p><h1>Una tienda de ejemplo.</h1>
+<p>Catálogo para consultar productos. No procesa compras ni pagos.</p>
+<form method="get"><label for="prd">Buscar por nombre</label><input id="prd" name="prd" value="{{ consulta }}" maxlength="20"><button>Buscar</button></form>
+{% if error %}<p role="alert">{{ error }}</p>{% endif %}
+<p>{{ articulos|length }} artículo{{ articulos|length|pluralize }} encontrado{{ articulos|length|pluralize }}.</p>
+<table><caption>Catálogo ficticio</caption><thead><tr><th scope="col">Nombre</th><th scope="col">Sección</th><th scope="col">Precio de ejemplo</th></tr></thead>
+<tbody>{% for articulo in articulos %}<tr><th scope="row">{{ articulo.nombre }}</th><td>{{ articulo.seccion }}</td><td>{{ articulo.precio }}</td></tr>{% empty %}<tr><td colspan="3">No hay artículos para esta búsqueda.</td></tr>{% endfor %}</tbody></table>
+{% endblock %}

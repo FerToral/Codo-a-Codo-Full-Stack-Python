@@ -4,6 +4,7 @@ Una misma temática recorre las prácticas de Bootstrap, JavaScript y Vue. Cada 
 
 | Trabajo | Carpeta                                 | Contenido                                                                 |
 | ------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| TP01–06 | [01-06-HTML-CSS](01-06-HTML-CSS/index.html) | Base completa: seis páginas, formulario, iframe, galería, fuentes e iconos locales |
 | TP07    | [07-Bootstrap](07-Bootstrap/index.html) | Navegación colapsable, carrusel y tres columnas adaptables                |
 | TP08–09 | [08-09-DOM](08-09-DOM/index.html)       | Cabecera y pie compartidos; productos desde un array de objetos           |
 | TP10    | [10-Vue](10-Vue/index.html)             | Datos reactivos, tarjetas Bootstrap y filtros                             |

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Registro · La cocina de Juan</title>
+    <link
+      rel="stylesheet"
+      href="../../../recursos/vendor/fontawesome/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../recursos/vendor/fontawesome/css/solid.min.css"
+    />
+    <link rel="stylesheet" href="cocina.css" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <a class="marca" href="index.html"
+        ><i class="fa-solid fa-carrot" aria-hidden="true"></i> La cocina de
+        Juan</a
+      >
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="receta.html">La receta</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="registro.html" aria-current="page">Registro</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="clientes.html">Clientes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="contenido">
+      <header class="titulo">
+        <p class="ceja">Formulario de práctica</p>
+        <h1>Sumate a la mesa.</h1>
+        <p>
+          Usá datos inventados. No se crea una cuenta, no se envía información
+          ni se guarda el formulario.
+        </p>
+      </header>
+      <form id="registro" method="dialog">
+        <fieldset>
+          <legend>Datos de ejemplo</legend>
+          <div class="campos">
+            <label
+              >Nombre<input
+                name="nombre"
+                required
+                maxlength="60"
+                autocomplete="off" /></label
+            ><label
+              >Apellido<input
+                name="apellido"
+                required
+                maxlength="60"
+                autocomplete="off" /></label
+            ><label
+              >Correo<input
+                name="correo"
+                type="email"
+                required
+                autocomplete="off" /></label
+            ><label
+              >Teléfono<input
+                name="telefono"
+                type="tel"
+                autocomplete="off" /></label
+            ><label
+              >Fecha de nacimiento<input name="nacimiento" type="date" /></label
+            ><label
+              >Clave ficticia<input
+                name="clave"
+                type="password"
+                minlength="8"
+                autocomplete="off"
+                aria-describedby="clave-aviso"
+            /></label>
+          </div>
+          <p id="clave-aviso" class="ayuda">
+            No uses una contraseña real. La clave no aparece en el resumen.
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Dirección de ejemplo</legend>
+          <div class="campos">
+            <label>Calle<input name="calle" maxlength="100" /></label
+            ><label>Número<input name="numero" inputmode="numeric" /></label
+            ><label>Ciudad<input name="ciudad" maxlength="80" /></label
+            ><label>Código postal<input name="postal" maxlength="12" /></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Preferencias</legend>
+          <p>Género (opcional)</p>
+          <div class="opciones">
+            <label
+              ><input type="radio" name="genero" value="mujer" /> Mujer</label
+            ><label
+              ><input type="radio" name="genero" value="hombre" /> Hombre</label
+            ><label
+              ><input type="radio" name="genero" value="otro" /> Otro / prefiero
+              no indicar</label
+            >
+          </div>
+          <p>Conocimientos previos</p>
+          <div class="opciones">
+            <label
+              ><input type="checkbox" name="conocimientos" value="HTML" />
+              HTML</label
+            ><label
+              ><input type="checkbox" name="conocimientos" value="CSS" />
+              CSS</label
+            ><label
+              ><input type="checkbox" name="conocimientos" value="JavaScript" />
+              JavaScript</label
+            ><label
+              ><input type="checkbox" name="conocimientos" value="Python" />
+              Python</label
+            ><label
+              ><input type="checkbox" name="conocimientos" value="Django" />
+              Django</label
+            >
+          </div>
+          <label
+            >Estudios<select name="estudios">
+              <option value="">Sin indicar</option>
+              <option>Primarios</option>
+              <option>Secundarios</option>
+              <option>Terciarios</option>
+              <option>Universitarios</option>
+            </select></label
+          ><label
+            >Enlace a tu práctica<input
+              name="enlace"
+              type="url"
+              placeholder="https://example.org" /></label
+          ><label
+            >Comentarios<textarea
+              name="comentarios"
+              rows="4"
+              maxlength="1000"
+            ></textarea>
+          </label>
+        </fieldset>
+        <button type="submit">
+          Revisar datos
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <p id="estado" role="status" aria-live="polite"></p>
+        <noscript
+          >El formulario se muestra sin JavaScript, pero la revisión local de
+          datos requiere activarlo.</noscript
+        >
+      </form>
+      <section id="resumen" hidden aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen" tabindex="-1">Resumen local</h2>
+        <p>Estos datos sólo están en esta pantalla. La clave se omite.</p>
+        <dl id="datos-resumen"></dl>
+      </section>
+      <script src="formulario.js" defer></script>
+    </main>
+    <footer>
+      <p>La cocina de Juan · Prácticas HTML y CSS · Codo a Codo</p>
+      <p>
+        <a href="README.md">Consignas y recorrido</a> ·
+        <a href="../../../..//CREDITOS.md">Créditos</a>
+      </p>
+    </footer>
+  </body>
+</html>

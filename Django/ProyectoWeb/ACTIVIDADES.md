@@ -26,7 +26,15 @@ Crear categorías y publicaciones. Cada publicación tiene título, contenido, i
 
 Reservar clientes y pedidos para personal autorizado, conservar CSRF en los formularios y pedir confirmación antes de borrar. Crear datos ficticios sin contraseñas compartidas y comprobar que cargar la demostración dos veces no duplica registros.
 
-## 7. Publicación
+## 7. Artículos, búsquedas y contacto
+
+Crear Articulo con nombre,sección yprecio, registrar el modelo enadmin yconsultarlo por nombre usando icontains. La búsqueda admite hasta20caracteres einforma si no hay resultados. Completar dirección/teléfono delcliente yel borrado en cascada de publicaciones al eliminar alautor, como especifica la clase.
+
+Crear el contacto mediante FormsAPI: asunto,email ymensaje. ValidarPOST,usar cleaned_data ymostrar confirmación con contenido escapado, sin guardar el mensaje ni inventar un envío de correo. Agregar el ejemplo de edad con parámetrosURL ybase2020 para conservar su contexto.
+
+Configurar PostgreSQL con variables de entorno, conservandoSQLite como arranque rápido. Las credenciales no forman parte de una entrega pública.
+
+## 8. Publicación
 
 Distinguir archivos estáticos de archivos subidos, desarrollo de producción y alojamiento de servicio administrado. Antes de un despliegue real, revisar `check --deploy`, credenciales, hosts, HTTPS, copias de respaldo y permisos de los medios.
 

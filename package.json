@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test:web": "node --test JavaScript/pruebas/*.test.mjs Web/Trabajos-Practicos/Astronomia/pruebas/*.test.cjs"
+    "test:web": "node --test JavaScript/pruebas/*.test.mjs Web/Trabajos-Practicos/Astronomia/pruebas/*.test.cjs Web/Trabajos-Practicos/Cocina/pruebas/*.test.mjs"
   },
   "engines": {
     "node": ">=20"

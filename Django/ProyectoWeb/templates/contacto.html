@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+{% block content %}
+<p class="etiqueta">Forms API y POST</p><h1>Contacto</h1>
+<p>Demostración de validación en el servidor. Usá datos ficticios: no se guarda el mensaje ni se envía correo.</p>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button>Validar mensaje</button></form>
+{% endblock %}

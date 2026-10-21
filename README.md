@@ -4,16 +4,19 @@ Prácticas y proyectos de la formación Full Stack de Codo a Codo: desde página
 
 ## Recorrido
 
-| Área                                                   | Prácticas                                                                   |
-| ------------------------------------------------------ | --------------------------------------------------------------------------- |
-| [HTML y CSS](Web/Trabajos-Practicos/Astronomia/)       | Órbita: seis páginas, navegación, tablas y formulario                       |
-| [Bootstrap, DOM y Vue](Web/Trabajos-Practicos/Cocina/) | La cocina de Juan: diseño adaptable, catálogo, datos reactivos y SPA        |
-| [JavaScript](JavaScript/)                              | Fundamentos, funciones, arrays, cadenas, eventos y almacenamiento local     |
-| [Bases de datos](Bases-de-Datos/)                      | 60 actividades SQL y 35 de empleados y departamentos, con datos de práctica |
-| [Python](Python/)                                      | Fundamentos, colecciones, control de flujo, excepciones, funciones y POO    |
-| [Django](Django/ProyectoWeb/)                          | Vistas, ORM, formularios, pedidos, servicios, blog y administración         |
+| Área                                                       | Prácticas                                                                           |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [HTML y CSS](Web/Trabajos-Practicos/Astronomia/)           | Órbita: seis páginas, navegación, tablas y formulario                               |
+| [TP01–TP06](Web/Trabajos-Practicos/Cocina/01-06-HTML-CSS/) | Cocina: seis páginas, tablas, formulario, iframe, galería, fuentes e iconos locales |
+| [Bootstrap, DOM y Vue](Web/Trabajos-Practicos/Cocina/)     | La cocina de Juan: diseño adaptable, catálogo, datos reactivos y SPA                |
+| [JavaScript](JavaScript/)                                  | Fundamentos, funciones, arrays, cadenas, eventos y almacenamiento local             |
+| [Bases de datos](Bases-de-Datos/)                          | 60 actividades SQL y 35 de empleados y departamentos, con datos de práctica         |
+| [Python](Python/)                                          | Fundamentos, colecciones, control de flujo, excepciones, funciones y POO            |
+| [Django](Django/ProyectoWeb/)                              | Vistas, ORM, formularios, pedidos, servicios, blog y administración                 |
 
 Cada módulo incluye instrucciones y material de trabajo. El [mapa de la cursada](docs/material-de-la-cursada.md) relaciona conceptos y actividades; el [recorrido web](docs/trabajos-practicos-web.md) sigue la evolución de los trabajos.
+
+El [cronograma y la cobertura](docs/cronograma-y-cobertura.md) vinculan las actividades con las clases y las fechas del curso.
 
 ## Empezar por la web
 
